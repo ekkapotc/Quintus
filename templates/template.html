@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <meta charset="UTF-8" />
+    <title></title>
+    <style>
+      .dataframe {
+        font-size: 11pt;
+        font-family: Arial;
+        border-collapse: collapse;
+        border: 1px solid silver;
+      }
+
+      .dataframe td,
+      th {
+        padding: 5px;
+      }
+
+      .dataframe tr:nth-child(even) {
+        background: #e0e0e0;
+      }
+
+      .dataframe tr:hover {
+        background: silver;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h2><center>{{air_port_name}}</center></h2>
+    </div>
+    <div>
+      <p>
+        <center>
+          <span class="span"
+            ><b>Report File Name:</b> {{report_file_name}}</span
+          >
+          <span class="span"
+            >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
+          >
+          <span class="span"><b>Date of Report:</b> {{date_of_report}} </span>
+          <span class="span"
+            >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
+          >
+          <span class="span"><b>Time of Report:</b> {{time_of_report}}</span>
+        </center>
+      </p>
+      <p>
+        <center>
+          <span class="span"><b>Way Name:</b> {{way_name}} </span>
+          <span class="span"
+            >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
+          >
+          <span class="span"><b>Agent:</b> {{agent}} </span>
+          <span class="span"
+            >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
+          >
+          <span class="span"><em>(Not Cross Checked)</em></span>
+        </center>
+      </p>
+    </div>
+
+    <hr />
+
+    <div>
+      <center>{{ m_table }}</center>
+    </div>
+    <div>
+      <center>{{ measurement_bar_chart}}</center>
+    </div>
+
+    <hr />
+
+    <div>
+      <p style="text-align: right">
+        <span class="span"><b>Date of Report:</b> {{date_of_report}}</span>
+        <span class="span"
+          >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
+        >
+        <span class="span"
+          >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
+        >
+        <span class="span"
+          >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
+        >
+        <span class="span"
+          >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
+        >
+        <span class="span"
+          >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
+        >
+        <span class="span"
+          >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
+        >
+        <span class="span"
+          >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
+        >
+        <span class="span"
+          >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
+        >
+        <span class="span"
+          >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
+        >
+        <span class="span"
+          >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
+        >
+        <span class="span"
+          >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
+        >
+        <span class="span"
+          >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
+        >
+        <span class="span"
+          >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
+        >
+
+        <span class="span"
+          >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
+        >
+        <span class="span"
+          >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
+        >
+
+        <span class="span"><b>Page:</b> {{page_no}}</span>
+
+        <span class="span"
+          >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
+        >
+        <span class="span"
+          >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
+        >
+      </p>
+    </div>
+  </body>
+</html>
