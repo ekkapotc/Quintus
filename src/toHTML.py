@@ -61,6 +61,7 @@ class QReport:
             if end_row > num_of_rows:
                 end_row = num_of_rows
 
+            #Export the current page as HTML
             self.__oneHTML( page_num , start_row , end_row )
 
             row = end_row+1
