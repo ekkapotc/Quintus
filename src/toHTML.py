@@ -38,12 +38,12 @@ class Report:
         row = 1
         for page_num in range(num_of_pages):
             start_row = row
-            end_row = start_row + Config.numberOfRowsPerPage
+            end_row = start_row + Config.numberOfRowsPerPage-1
             if end_row > num_of_rows:
                 end_row = num_of_rows
-            print('Start Row : {} , End Tow : {}'.format( start_row , end_row ))
-            print(self.df.iloc[start_row:end_row].to_string())
-            row = end_row
+            print('Start Row : {} , End Row : {}'.format( start_row , end_row ))
+            print(self.df.loc[start_row:end_row].to_string())
+            row = end_row+1
 
         page_no = 1
 
