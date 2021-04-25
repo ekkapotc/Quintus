@@ -98,7 +98,6 @@ class QReport:
             html_file.write(each_page)
 
     def toHTML( self ):
-
         config = configparser.ConfigParser()
         config.read('config.ini')
 
