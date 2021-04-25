@@ -7,8 +7,6 @@ import datetime
 import utils
 import configure
 
-
-
 class QReport:
 
     def __init__( self , csv_file , * , report_file_name , airport_name ,way_name , agent_name , date_of_report , time_of_report ):
