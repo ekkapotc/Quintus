@@ -4,14 +4,14 @@ import os
 import math
 import configparser
 import datetime
-import utils
-import configure
+import QtUtils
+import QtConfigure
 
 class QReport:
 
     def __init__( self , csv_file , * , report_file_name , airport_name ,way_name , agent_name , date_of_report , time_of_report ):
         #Configure the underlying settings
-        configure.QConfig()
+        QtConfigure.QConfig()
 
         #Initialize report's parameters
         self.reportFileName = report_file_name
@@ -83,8 +83,8 @@ if __name__ == '__main__':
                     'airport_name':'Betong International Airport',
                     'way_name':'RUNWAY EDGE - 07L',
                     'agent_name':'FBT_Sp',
-                    'date_of_report': utils.getDate(datetime_of_report),
-                    'time_of_report': utils.getTime(datetime_of_report)
+                    'date_of_report': QtUtils.getDate(datetime_of_report),
+                    'time_of_report': QtUtils.getTime(datetime_of_report)
                  }
 
     report = QReport( 'C:\Workspace\Quintus\data\m_data.csv' , **headerData )
