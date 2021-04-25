@@ -4,9 +4,9 @@ import pandas as pd
 import numpy as np
 
 def random_date():
-    currentTime = datetime.datetime.now()
-    nextTime = currentTime + datetime.timedelta(minutes=random.randrange(1,60))
-    return nextTime  
+    current_datetime= datetime.datetime.now()
+    random_datetime = current_datetime + random.random()*datetime.timedelta(minutes=1)
+    return random_datetime
 
 records = int(input('Enter the number of records to generate: '))
 

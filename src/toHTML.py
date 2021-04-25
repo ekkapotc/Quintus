@@ -4,6 +4,7 @@ import os
 import math
 import configparser
 import utils
+import datetime
 
 class QConfig:
     
@@ -62,7 +63,7 @@ class QConfig:
 
 class QReport:
 
-    def __init__( self , csv_file , * , report_file_name , airport_name ,way_name , agent_name ):
+    def __init__( self , csv_file , * , report_file_name , airport_name ,way_name , agent_name , date_of_report , time_of_report ):
         #Configure the underlying settings
         QConfig()
 
@@ -71,6 +72,8 @@ class QReport:
         self.airportName = airport_name
         self.wayName = way_name
         self.agentName = agent_name
+        self.dateOfReport = date_of_report
+        self.timeOfReport = time_of_report
 
         #Construct dataframe    
         self.df = pd.read_csv(csv_file)
@@ -89,7 +92,9 @@ class QReport:
                                     report_file_name=self.reportFileName,
                                     air_port_name=self.airportName,
                                     way_name=self.wayName,
-                                    agent_name=self.agentName
+                                    agent_name=self.agentName,
+                                    date_of_report=self.dateOfReport,
+                                    time_of_report=self.timeOfReport
                                 )
         #Export as HTML to the tmp folder specified by QConfig.tempLocation
         config = configparser.ConfigParser()
@@ -127,10 +132,16 @@ class QReport:
 #Test the module
 if __name__ == '__main__':
 
+    datetime_of_report = datetime.datetime.today()
+    date_of_report = datetime_of_report.date()
+    time_of_report = datetime_of_report.time().strftime("%H:%M:%S")
+
     metaData = {'report_file_name':'07000178.pac',
                 'airport_name':'Betong International Airport',
                 'way_name':'RUNWAY EDGE - 07L',
-                'agent_name':'FBT_Sp'
+                'agent_name':'FBT_Sp',
+                'date_of_report': date_of_report,
+                'time_of_report': time_of_report
                }
 
     report = QReport( 'C:\Workspace\Quintus\data\m_data.csv' , **metaData )
