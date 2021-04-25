@@ -40,7 +40,6 @@ class Report:
                                 )
         #Export as HTML
         with open( os.path.join( Config.reportLocation , '{0}-{1}.html'.format(self.reportFileName,page_num+1) ) , "w" ) as html_file: 
-
             html_file.write(each_page)
 
     def toHTML( self ):
@@ -54,7 +53,6 @@ class Report:
         num_of_pages = math.ceil(num_of_rows/Config.numberOfRowsPerPage)
         
         row = 1
-        
         for page_num in range(num_of_pages):
             start_row = row
             end_row = start_row + Config.numberOfRowsPerPage-1
