@@ -7,6 +7,9 @@ import utils
 import datetime
 
 class QConfig:
+
+    SUCCESS = 1
+    FAILURE = 1 << 2    
     
     __directories = ['img','data','tmp','report','templates'] 
 
@@ -23,9 +26,15 @@ class QConfig:
             target = os.path.join(utils.getPath(self.rootPath),directory)
             #Check if the tmp folder  already exists
             if not os.path.exists(target):
-                os.makedirs(target)
+                try:
+                    os.makedirs(target)
+                except Exception as e:
+                    print(e)
+                finally:
+                    return QConfig.FAILURE
             else:
                 print('\tINFO: {} already exists so nothing was done...'.format(directory))
+        return QConfig.SUCCESS
 
     def __createConfigFile(self):
         #Get path components of the current path
@@ -143,6 +152,3 @@ if __name__ == '__main__':
 
     report = QReport( 'C:\Workspace\Quintus\data\m_data.csv' , **headerData )
     report.toHTML()
-    
-
-    
