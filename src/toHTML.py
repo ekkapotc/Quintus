@@ -7,15 +7,6 @@ import utils
 
 class QConfig:
     
-    csvLocation = '../data'
-    csvName = 'm_data.csv'
-    templateLocation = '../templates'
-    templateName = 'template.html'
-    reportLocation = '../report'
-    numberOfRowsPerPage = 15
-    dataframeIndexColumn = 'LightID'
-    tempLocation = '../tmp'
-
     __directories = ['img','data','tmp','report','templates'] 
 
     def __initPaths(self):
