@@ -2,8 +2,11 @@ import pandas as pd
 from jinja2 import Environment, FileSystemLoader
 import os
 import math
+import configparser
+import utils
 
 class QConfig:
+    
     csvLocation = '../data'
     csvName = 'm_data.csv'
     templateLocation = '../templates'
@@ -13,9 +16,33 @@ class QConfig:
     dataframeIndexColumn = 'LightID'
     tempLocation = '../tmp'
 
+    __directories = ['img','data','tmp','report'] 
+
+    def __getCurPathInfo(self):
+        #Get path components of the current path
+        pathComponents = os.path.realpath(__file__).split(os.sep) 
+        #Compute path info
+        self.fileName  = pathComponents.pop()
+        self.curFolder = pathComponents.pop()
+        self.rootPath = pathComponents
+
+    def __init__(self):
+        #Get current working directory
+        self.__getCurPathInfo()
+
+        for directory in QConfig.__directories:
+            #Compute target directory
+            target = os.path.join(utils.getPath(self.rootPath),directory)
+            #Check if the tmp folder  already exists
+            if not os.path.exists(target):
+                os.makedirs(target)
+
 class QReport:
 
     def __init__( self , csv_file , * , report_file_name , airport_name ,way_name , agent_name ):
+        #Initialize the config object
+        self.config = QConfig()
+
         #Initialize report's parameters
         self.reportFileName = report_file_name
         self.airportName = airport_name
@@ -78,5 +105,6 @@ if __name__ == '__main__':
 
     report = QReport( os.path.join( QConfig.csvLocation , QConfig.csvName ) , **metaData )
     report.toHTML()
+    
 
     
