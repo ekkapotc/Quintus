@@ -14,7 +14,7 @@ class Config:
 
 class Report:
 
-    def __init__(self,csv_file,*,report_file_name,airport_name,way_name,agent_name):
+    def __init__( self , csv_file , * , report_file_name , airport_name ,way_name , agent_name ):
         #Initialize report's parameters
         self.reportFileName = report_file_name
         self.airportName = airport_name
@@ -25,47 +25,54 @@ class Report:
         self.df = pd.read_csv(csv_file)
         self.df.set_index(Config.dataframeIndexColumn,inplace=True)
 
-    def toHTML(self):
-        file_loader = FileSystemLoader(Config.templateLocation) 
-        env = Environment(loader=file_loader,trim_blocks=True)
-
-        template = env.get_template(Config.templateName) 
-        m_table = self.df.to_html() 
-
-        num_of_rows  = self.df.shape[0]
-        num_of_pages = math.ceil(num_of_rows/Config.numberOfRowsPerPage)
-
-        row = 1
-        for page_num in range(num_of_pages):
-            start_row = row
-            end_row = start_row + Config.numberOfRowsPerPage-1
-            if end_row > num_of_rows:
-                end_row = num_of_rows
-            print('Start Row : {} , End Row : {}'.format( start_row , end_row ))
-            print(self.df.loc[start_row:end_row].to_string())
-            row = end_row+1
-
-        page_no = 1
-
+    def __oneHTML( self , page_num , start_row , end_row ):
+        cur_df = self.df.loc[start_row:end_row]
+        m_table = cur_df.to_html() 
         #Render each page 
-        each_page =  template.render(
+        each_page =  self.template.render(
                                     m_table=m_table,
-                                    page_no=page_no,
+                                    page_no=page_num,
                                     report_file_name=self.reportFileName,
                                     air_port_name=self.airportName,
                                     way_name=self.wayName,
                                     agent=self.agentName
                                 )
-
-        #Save each page as HTML
-        with open( os.path.join( Config.reportLocation , '{0}-{1}.html'.format(self.reportFileName,page_no) ) , "w" ) as html_file: 
+        #Export as HTML
+        with open( os.path.join( Config.reportLocation , '{0}-{1}.html'.format(self.reportFileName,page_num) ) , "w" ) as html_file: 
 
             html_file.write(each_page)
+
+    def toHTML( self ):
+        file_loader = FileSystemLoader(Config.templateLocation) 
+        env = Environment(loader=file_loader,trim_blocks=True)
+        self.template = env.get_template(Config.templateName) 
+
+        #m_table = self.df.to_html() 
+
+        num_of_rows  = self.df.shape[0]
+        num_of_pages = math.ceil(num_of_rows/Config.numberOfRowsPerPage)
+        
+        row = 1
+        page_num = 1
+
+        for page_num in range(num_of_pages):
+            start_row = row
+            end_row = start_row + Config.numberOfRowsPerPage-1
+            if end_row > num_of_rows:
+                end_row = num_of_rows
+
+            self.__oneHTML( page_num , start_row , end_row )
+
+            #print('Start Row : {} , End Row : {}'.format( start_row , end_row ))
+            #print(self.df.loc[start_row:end_row].to_string())
+
+            row = end_row+1
+            page_num += 1
 
 #Test the module
 if __name__ == '__main__':
 
-    metaData = {    'report_file_name':'07000178.pac',
+    metaData = {'report_file_name':'07000178.pac',
                 'airport_name':'Betong International Airport',
                 'way_name':'RUNWAY EDGE - 07L',
                 'agent_name':'FBT_Sp'
