@@ -1,37 +1,77 @@
-
 import pandas as pd
-import datetime
 from jinja2 import Environment, FileSystemLoader
+import os
+import math
 
-import readmCSV
+class Config:
+    csvLocation = '../data'
+    csvName = 'm_data.csv'
+    templateLocation = '../templates'
+    templateName = 'template.html'
+    reportLocation = '../report'
+    numberOfRowsPerPage = 15
+    dataframeIndexColumn = 'LightID'
 
-def dfToHTML(df,*,page_no,report_file_name,way_name,agent):
+class Report:
 
-    file_loader = FileSystemLoader('../templates')
-    env = Environment(loader=file_loader,trim_blocks=True)
+    def __init__(self,csv_file,*,report_file_name,airport_name,way_name,agent_name):
+        #Initialize report's parameters
+        self.reportFileName = report_file_name
+        self.airportName = airport_name
+        self.wayName = way_name
+        self.agentName = agent_name
 
-    template = env.get_template('template.html')
-    m_table = df.to_html() #default class = dataframe
-    m_page =  template.render(m_table=m_table,
-                                page_no=page_no,
-                                report_file_name=report_file_name,
-                                way_name=way_name,
-                                agent=agent)
+        #Construct dataframe    
+        self.df = pd.read_csv(csv_file)
+        self.df.set_index(Config.dataframeIndexColumn,inplace=True)
 
-    with open('../report/{0}-{1}.html'.format(report_file_name,page_no), "w") as o_file:
-        o_file.write(m_page)
+    def toHTML(self):
+        file_loader = FileSystemLoader(Config.templateLocation) 
+        env = Environment(loader=file_loader,trim_blocks=True)
 
-#test
+        template = env.get_template(Config.templateName) 
+        m_table = self.df.to_html() 
+
+        num_of_rows  = self.df.shape[0]
+        num_of_pages = math.ceil(num_of_rows/Config.numberOfRowsPerPage)
+
+        row = 1
+        for page_num in range(num_of_pages):
+            start_row = row
+            end_row = start_row + Config.numberOfRowsPerPage
+            if end_row > num_of_rows:
+                end_row = num_of_rows
+            print('Start Row : {} , End Tow : {}'.format( start_row , end_row ))
+            print(self.df.iloc[start_row:end_row].to_string())
+            row = end_row
+
+        page_no = 1
+
+        #Render each page 
+        each_page =  template.render(
+                                    m_table=m_table,
+                                    page_no=page_no,
+                                    report_file_name=self.reportFileName,
+                                    air_port_name=self.airportName,
+                                    way_name=self.wayName,
+                                    agent=self.agentName
+                                )
+
+        #Save each page as HTML
+        with open( os.path.join( Config.reportLocation , '{0}-{1}.html'.format(self.reportFileName,page_no) ) , "w" ) as html_file: 
+
+            html_file.write(each_page)
+
+#Test the module
 if __name__ == '__main__':
-    try:
-        df = readmCSV.read_csv('../data/m_data.csv')
-    except Exception as e:
-        print(e)
-    try:
-        meta_data = {   'page_no':1 , 
-                        'report_file_name':'07000178.pac',
-                        'way_name':'RUNWAY EDGE - 07L',
-                        'agent':'FBT_Sp'}
-        dfToHTML(df,**meta_data)
-    except Exception as e:
-        print(e)
+
+    metaData = {    'report_file_name':'07000178.pac',
+                'airport_name':'Betong International Airport',
+                'way_name':'RUNWAY EDGE - 07L',
+                'agent_name':'FBT_Sp'
+               }
+
+    report = Report( os.path.join( Config.csvLocation , Config.csvName ) , **metaData )
+    report.toHTML()
+
+    
