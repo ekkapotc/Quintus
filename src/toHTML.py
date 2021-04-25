@@ -10,7 +10,6 @@ class QConfig:
 
     SUCCESS = 1
     FAILURE = 1 << 2    
-    
     __directories = ['img','data','tmp','report','templates'] 
 
     def __initPaths(self):
@@ -26,15 +25,9 @@ class QConfig:
             target = os.path.join(utils.getPath(self.rootPath),directory)
             #Check if the tmp folder  already exists
             if not os.path.exists(target):
-                try:
                     os.makedirs(target)
-                except Exception as e:
-                    print(e)
-                finally:
-                    return QConfig.FAILURE
             else:
                 print('\tINFO: {} already exists so nothing was done...'.format(directory))
-        return QConfig.SUCCESS
 
     def __createConfigFile(self):
         #Get path components of the current path
