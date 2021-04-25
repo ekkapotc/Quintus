@@ -8,8 +8,9 @@ import datetime
 
 class QConfig:
 
-    SUCCESS = 1
-    FAILURE = 1 << 2    
+    __SUCCESS = 1           #TO-DO
+    __FAILURE = (1 << 2)    #TO-DO  
+    
     __directories = ['img','data','tmp','report','templates'] 
 
     def __initPaths(self):
@@ -20,12 +21,17 @@ class QConfig:
         self.curFolder = pathComponents.pop()
         self.rootPath = pathComponents
 
+        exceptions = []
+
         for directory in QConfig.__directories:
             #Compute target directory
             target = os.path.join(utils.getPath(self.rootPath),directory)
             #Check if the tmp folder  already exists
             if not os.path.exists(target):
-                    os.makedirs(target)
+                    try:
+                        os.makedirs(target)
+                    except Exception as e:
+                        exceptions.append(e)
             else:
                 print('\tINFO: {} already exists so nothing was done...'.format(directory))
 
