@@ -2,7 +2,7 @@ import os
 import configparser
 import QtUtils
 
-class QConfig:
+class QtConfig:
 
     __SUCCESS = 1           #TO-DO
     __FAILURE = (1 << 2)    #TO-DO  
@@ -23,7 +23,7 @@ class QConfig:
         self.curFolder = pathComponents.pop()
         self.rootPath = pathComponents
 
-        for directory in QConfig.__directories:
+        for directory in QtConfig.__directories:
             #Compute target directory
             target = os.path.join(QtUtils.getPath(self.rootPath),directory)
             #Check if the tmp folder  already exists

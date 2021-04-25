@@ -7,11 +7,11 @@ import datetime
 import QtUtils
 import QtConfigure
 
-class QReport:
+class QtReport:
 
     def __init__( self , csv_file , * , report_file_name , airport_name ,way_name , agent_name , date_of_report , time_of_report ):
         #Configure the underlying settings
-        QtConfigure.QConfig()
+        QtConfigure.QtConfig()
 
         #Initialize report's parameters
         self.reportFileName = report_file_name
@@ -87,5 +87,5 @@ if __name__ == '__main__':
                     'time_of_report': QtUtils.getTime(datetime_of_report)
                  }
 
-    report = QReport( 'C:\Workspace\Quintus\data\m_data.csv' , **headerData )
+    report = QtReport( 'C:\Workspace\Quintus\data\m_data.csv' , **headerData )
     report.toHTML()
