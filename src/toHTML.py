@@ -26,19 +26,20 @@ class Report:
         self.df.set_index(Config.dataframeIndexColumn,inplace=True)
 
     def __oneHTML( self , page_num , start_row , end_row ):
+        #Get the entries for the current page
         cur_df = self.df.loc[start_row:end_row]
         m_table = cur_df.to_html() 
         #Render each page 
         each_page =  self.template.render(
                                     m_table=m_table,
-                                    page_no=page_num,
+                                    page_no=page_num+1, 
                                     report_file_name=self.reportFileName,
                                     air_port_name=self.airportName,
                                     way_name=self.wayName,
                                     agent=self.agentName
                                 )
         #Export as HTML
-        with open( os.path.join( Config.reportLocation , '{0}-{1}.html'.format(self.reportFileName,page_num) ) , "w" ) as html_file: 
+        with open( os.path.join( Config.reportLocation , '{0}-{1}.html'.format(self.reportFileName,page_num+1) ) , "w" ) as html_file: 
 
             html_file.write(each_page)
 
@@ -47,24 +48,21 @@ class Report:
         env = Environment(loader=file_loader,trim_blocks=True)
         self.template = env.get_template(Config.templateName) 
 
-        #m_table = self.df.to_html() 
-
+        #Get the total number of entries
         num_of_rows  = self.df.shape[0]
+        #Calculate the number of pages based on the config where the number of entries per page is set
         num_of_pages = math.ceil(num_of_rows/Config.numberOfRowsPerPage)
         
         row = 1
-        page_num = 1
-
+        
         for page_num in range(num_of_pages):
             start_row = row
             end_row = start_row + Config.numberOfRowsPerPage-1
+
             if end_row > num_of_rows:
                 end_row = num_of_rows
 
             self.__oneHTML( page_num , start_row , end_row )
-
-            #print('Start Row : {} , End Row : {}'.format( start_row , end_row ))
-            #print(self.df.loc[start_row:end_row].to_string())
 
             row = end_row+1
             page_num += 1
