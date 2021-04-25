@@ -45,8 +45,14 @@ class QtReport:
         #Export as HTML to the tmp folder specified by tempLocation in the config.ini file
         config = configparser.ConfigParser()
         config.read('config.ini')
-        with open( os.path.join( config['Locations']['templocation'] , '{0}-{1}.html'.format(self.reportFileName,page_num+1) ) , "w" ) as html_file: 
+        
+        #Compute the name of the current HTML
+        new_HTML = os.path.join( config['Locations']['templocation'] , '{0}-{1}.html'.format(self.reportFileName,page_num+1) )
+        
+        with open( new_HTML , "w" ) as html_file: 
             html_file.write(each_page)
+
+        QtUtils.displayInfo('{0} was made...'.format(new_HTML))
 
     def toHTML( self ):
         config = configparser.ConfigParser()

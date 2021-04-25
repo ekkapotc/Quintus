@@ -29,8 +29,9 @@ class QtConfig:
             #Check if the tmp folder  already exists
             if not os.path.exists(target):
                 os.makedirs(target)
+                QtUtils.displayInfo('{0} was made...'.format(directory))
             else:
-                print('\tINFO: {} already exists so nothing was done...'.format(directory))
+                QtUtils.displayInfo('{0} already exists so nothing was done...'.format(directory))
 
     def __createConfigFile(self):
         #Get path components of the current path
@@ -58,8 +59,10 @@ class QtConfig:
 
             with open('config.ini', 'w') as config_file:
                 config.write(config_file)
+
+            QtUtils.displayInfo('config.ini was made...')
         else:
-            print('\tINFO: config.ini already exists so nothing was done...')
+            QtUtils.displayInfo('config.ini already exists so nothing was done...')
 
     def __init__(self):
         #Initialize config file
