@@ -96,7 +96,7 @@ class QReport:
                                     date_of_report=self.dateOfReport,
                                     time_of_report=self.timeOfReport
                                 )
-        #Export as HTML to the tmp folder specified by QConfig.tempLocation
+        #Export as HTML to the tmp folder specified by tempLocation in the config.ini file
         config = configparser.ConfigParser()
         config.read('config.ini')
         with open( os.path.join( config['Locations']['templocation'] , '{0}-{1}.html'.format(self.reportFileName,page_num+1) ) , "w" ) as html_file: 
