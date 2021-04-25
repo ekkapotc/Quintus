@@ -1,5 +1,6 @@
 import os
 import logging
+from functools import wraps
 
 def getPath(path):
     res = ''
@@ -13,10 +14,11 @@ def getDate(datetime):
 
 def logRuntimeInfo(orig_func):
     logging.basicConfig(filename='runtime.log'.format(orig_func.__name__), level=logging.INFO)
-
+    
+    @wraps(orig_func)
     def logRuntimeInfoWrapper(*args, **kwargs):
         logging.info(
-            'Ran with args: {}, and kwargs: {}'.format(args, kwargs)
+            '{0} ran with args: {1}, and kwargs: {2}'.format(orig_func.__name__,args, kwargs)
         )
         return orig_func(*args, **kwargs)
 
