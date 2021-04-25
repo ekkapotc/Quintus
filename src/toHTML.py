@@ -136,7 +136,7 @@ if __name__ == '__main__':
     date_of_report = datetime_of_report.date()
     time_of_report = datetime_of_report.time().strftime("%H:%M:%S")
 
-    metaData = {'report_file_name':'07000178.pac',
+    headerData = {'report_file_name':'07000178.pac',
                 'airport_name':'Betong International Airport',
                 'way_name':'RUNWAY EDGE - 07L',
                 'agent_name':'FBT_Sp',
@@ -144,7 +144,7 @@ if __name__ == '__main__':
                 'time_of_report': time_of_report
                }
 
-    report = QReport( 'C:\Workspace\Quintus\data\m_data.csv' , **metaData )
+    report = QReport( 'C:\Workspace\Quintus\data\m_data.csv' , **headerData )
     report.toHTML()
     
 
