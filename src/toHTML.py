@@ -10,8 +10,14 @@ class QConfig:
 
     __SUCCESS = 1           #TO-DO
     __FAILURE = (1 << 2)    #TO-DO  
-    
-    __directories = ['img','data','tmp','report','templates'] 
+
+    __directories = {
+                        'img':'img',
+                        'data':'data',
+                        'tmp':'tmp',
+                        'report':'report',
+                        'templates':'templates',
+                     } 
 
     def __initPaths(self):
         #Get path components of the current path
@@ -43,11 +49,11 @@ class QConfig:
             #Instantiate a config parser
             config = configparser.ConfigParser()
             #Intialize key paths
-            img_folder = os.path.join(utils.getPath(self.rootPath), QConfig.__directories[0])
-            data_folder = os.path.join(utils.getPath(self.rootPath), QConfig.__directories[1])
-            tmp_folder = os.path.join(utils.getPath(self.rootPath), QConfig.__directories[2])
-            report_folder = os.path.join(utils.getPath(self.rootPath), QConfig.__directories[3])
-            template_folder = os.path.join(utils.getPath(self.rootPath), QConfig.__directories[4])
+            img_folder = os.path.join(utils.getPath(self.rootPath), QConfig.__directories['img'])
+            data_folder = os.path.join(utils.getPath(self.rootPath), QConfig.__directories['data'])
+            tmp_folder = os.path.join(utils.getPath(self.rootPath), QConfig.__directories['tmp'])
+            report_folder = os.path.join(utils.getPath(self.rootPath), QConfig.__directories['report'])
+            template_folder = os.path.join(utils.getPath(self.rootPath), QConfig.__directories['templates'])
 
             #Define sections in the config file
             config['Locations'] = {'imageLocation': img_folder,
