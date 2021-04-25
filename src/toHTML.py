@@ -16,19 +16,15 @@ class QConfig:
     dataframeIndexColumn = 'LightID'
     tempLocation = '../tmp'
 
-    __directories = ['img','data','tmp','report'] 
+    __directories = ['img','data','tmp','report','templates'] 
 
-    def __getCurPathInfo(self):
+    def __initPaths(self):
         #Get path components of the current path
         pathComponents = os.path.realpath(__file__).split(os.sep) 
         #Compute path info
         self.fileName  = pathComponents.pop()
         self.curFolder = pathComponents.pop()
         self.rootPath = pathComponents
-
-    def __init__(self):
-        #Get current working directory
-        self.__getCurPathInfo()
 
         for directory in QConfig.__directories:
             #Compute target directory
@@ -37,11 +33,41 @@ class QConfig:
             if not os.path.exists(target):
                 os.makedirs(target)
 
+    def __createConfigFile(self):
+        #Get path components of the current path
+        self.__initPaths()
+        #Instantiate a config parser
+        config = configparser.ConfigParser()
+        #Intialize key paths
+        img_folder = os.path.join(utils.getPath(self.rootPath), QConfig.__directories[0])
+        data_folder = os.path.join(utils.getPath(self.rootPath), QConfig.__directories[1])
+        tmp_folder = os.path.join(utils.getPath(self.rootPath), QConfig.__directories[2])
+        report_folder = os.path.join(utils.getPath(self.rootPath), QConfig.__directories[3])
+        template_folder = os.path.join(utils.getPath(self.rootPath), QConfig.__directories[4])
+
+        #Define sections in the config file
+        config['Locations'] = {'imageLocation': img_folder,
+                             'dataLocation':  data_folder,
+                             'tempLocation':  tmp_folder,
+                             'reportLocation': report_folder,
+                             'templateLocation': template_folder,
+                            }
+        config['DataFrame']    = {'indexColumn':'LightID'}
+        config['ReportFormat'] = {'numberOfRowsPerPage':15}
+
+        with open('config.ini', 'w') as config_file:
+            config.write(config_file)
+
+    def __init__(self):
+        #Initialize config file
+        self.__createConfigFile()
+        
+
 class QReport:
 
     def __init__( self , csv_file , * , report_file_name , airport_name ,way_name , agent_name ):
-        #Initialize the config object
-        self.config = QConfig()
+        #Configure the underlying settings
+        QConfig()
 
         #Initialize report's parameters
         self.reportFileName = report_file_name
@@ -51,7 +77,9 @@ class QReport:
 
         #Construct dataframe    
         self.df = pd.read_csv(csv_file)
-        self.df.set_index(QConfig.dataframeIndexColumn,inplace=True)
+        config = configparser.ConfigParser()
+        config.read('config.ini')
+        self.df.set_index(config['DataFrame']['indexColumn'],inplace=True)
 
     def __oneHTML( self , page_num , start_row , end_row ):
         #Get the entries for the current page
@@ -64,26 +92,32 @@ class QReport:
                                     report_file_name=self.reportFileName,
                                     air_port_name=self.airportName,
                                     way_name=self.wayName,
-                                    agent=self.agentName
+                                    agent_name=self.agentName
                                 )
         #Export as HTML to the tmp folder specified by QConfig.tempLocation
-        with open( os.path.join( QConfig.tempLocation , '{0}-{1}.html'.format(self.reportFileName,page_num+1) ) , "w" ) as html_file: 
+        config = configparser.ConfigParser()
+        config.read('config.ini')
+        with open( os.path.join( config['Locations']['templocation'] , '{0}-{1}.html'.format(self.reportFileName,page_num+1) ) , "w" ) as html_file: 
             html_file.write(each_page)
 
     def toHTML( self ):
-        file_loader = FileSystemLoader(QConfig.templateLocation) 
+
+        config = configparser.ConfigParser()
+        config.read('config.ini')
+
+        file_loader = FileSystemLoader(config['Locations']['templatelocation']) 
         env = Environment(loader=file_loader,trim_blocks=True)
-        self.template = env.get_template(QConfig.templateName) 
+        self.template = env.get_template('template.html') 
 
         #Get the total number of entries
         num_of_rows  = self.df.shape[0]
         #Calculate the number of pages based on the config where the number of entries per page is set
-        num_of_pages = math.ceil(num_of_rows/QConfig.numberOfRowsPerPage)
+        num_of_pages = math.ceil(num_of_rows/int(config['ReportFormat']['numberofrowsperpage']))
         
         row = 1
         for page_num in range(num_of_pages):
             start_row = row
-            end_row = start_row + QConfig.numberOfRowsPerPage-1
+            end_row = start_row + int(config['ReportFormat']['numberofrowsperpage']) -1
 
             if end_row > num_of_rows:
                 end_row = num_of_rows
@@ -103,7 +137,8 @@ if __name__ == '__main__':
                 'agent_name':'FBT_Sp'
                }
 
-    report = QReport( os.path.join( QConfig.csvLocation , QConfig.csvName ) , **metaData )
+    
+    report = QReport( 'C:\Workspace\Quintus\data\m_data.csv' , **metaData )
     report.toHTML()
     
 
