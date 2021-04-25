@@ -6,6 +6,14 @@ def getPath(path):
         res = res + c + os.sep
     return res 
 
+def getDate(datetime):
+    date = datetime.date().strftime('%d/%m/%Y')
+    return date
+
+def getTime(datetime):
+    time = datetime.time().strftime('%H:%M:%S')
+    return time
+
 if __name__ == '__main__':
 
     #Test getPath()

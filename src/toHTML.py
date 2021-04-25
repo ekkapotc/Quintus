@@ -131,18 +131,15 @@ class QReport:
 
 #Test the module
 if __name__ == '__main__':
-
     datetime_of_report = datetime.datetime.today()
-    date_of_report = datetime_of_report.date()
-    time_of_report = datetime_of_report.time().strftime("%H:%M:%S")
-
-    headerData = {'report_file_name':'07000178.pac',
-                'airport_name':'Betong International Airport',
-                'way_name':'RUNWAY EDGE - 07L',
-                'agent_name':'FBT_Sp',
-                'date_of_report': date_of_report,
-                'time_of_report': time_of_report
-               }
+    headerData = {  
+                    'report_file_name':'07000178.pac',
+                    'airport_name':'Betong International Airport',
+                    'way_name':'RUNWAY EDGE - 07L',
+                    'agent_name':'FBT_Sp',
+                    'date_of_report': utils.getDate(datetime_of_report),
+                    'time_of_report': utils.getTime(datetime_of_report)
+                 }
 
     report = QReport( 'C:\Workspace\Quintus\data\m_data.csv' , **headerData )
     report.toHTML()
