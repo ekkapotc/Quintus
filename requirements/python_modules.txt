@@ -1,5 +1,8 @@
+Package         Version
+--------------- -------
 beautifulsoup4  4.9.3
 click           7.1.2
+configparser    5.0.2
 cycler          0.10.0
 et-xmlfile      1.0.1
 Flask           1.1.2
