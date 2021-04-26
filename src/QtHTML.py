@@ -14,7 +14,7 @@ class QtReport:
     def __init__( self , csv_file , * , report_file_name , airport_name ,way_name , agent_name , date_of_report , time_of_report ):
         #Configure the underlying settings
         QtConfigure.QtConfig()
-
+        
         #Configure the DLL searc path the weasyprint module depends on 
         QtUtils.setDLLSearchPath()
 
@@ -30,12 +30,12 @@ class QtReport:
         self.df = pd.read_csv(csv_file)
         config = configparser.ConfigParser()
         config.read('config.ini')
-        self.df.set_index(config['DataFrame']['indexColumn'],inplace=True)
+        #self.df.set_index(config['DataFrame']['indexColumn'],inplace=True)
 
     def __oneHTML( self , page_num , start_row , end_row ):
         #Get the entries for the current page
-        cur_df = self.df.loc[start_row:end_row]
-        m_table = cur_df.to_html() 
+        cur_df = self.df.iloc[start_row:end_row+1] #end_row exclusive
+        m_table = cur_df.to_html(index=False) 
         #Render each page 
         each_page =  self.template.render(
                                     m_table=m_table,
@@ -58,9 +58,9 @@ class QtReport:
             html_file.write(each_page)
 
         #Compute the name of the current PDF 
-        new_PDF = os.path.join( config['Locations']['reportlocation'] , '{0}-{1}.pdf'.format(self.reportFileName,page_num+1) )
+        new_PDF_path = os.path.join( config['Locations']['reportlocation'] , '{0}-{1}.pdf'.format(self.reportFileName,page_num+1) )
 
-        HTML(string=each_page).write_pdf( new_PDF )
+        HTML(string=each_page).write_pdf( new_PDF_path ) 
 
         QtUtils.displayInfo('{0} was made...'.format(new_HTML))
 
@@ -77,7 +77,7 @@ class QtReport:
         #Calculate the number of pages based on the config where the number of entries per page is set
         num_of_pages = math.ceil(num_of_rows/int(config['ReportFormat']['numberofrowsperpage']))
         
-        row = 1
+        row = 0
         for page_num in range(num_of_pages):
             start_row = row
             end_row = start_row + int(config['ReportFormat']['numberofrowsperpage']) -1

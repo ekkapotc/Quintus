@@ -9,21 +9,27 @@
         font-family: Arial, Helvetica, sans-serif;
       }
 
-      @page {
-        size: A4; /* Change from the default size of A4 */
-        margin: 1cm; /* Set margin on each page */
+      hr {
+        border-top: 1px solid black;
+        border-bottom: none;
       }
 
       .dataframe {
         font-size: 7pt;
-        font-family: Arial, Helvetica, sans-serif;
         border-collapse: collapse;
-        border: 1px solid silver;
+        border: 1px solid black;
+      }
+
+      .dataframe thead {
+        padding: 3px;
+        font-size: 10pt;
+        color: #000;
       }
 
       .dataframe td,
       th {
-        padding: 5px;
+        padding: 3px;
+        text-align: center;
       }
 
       .dataframe tr:nth-child(even) {
@@ -31,8 +37,22 @@
       }
 
       .dataframe tr:hover {
-        background: silver;
+        background: rgb(112, 105, 105);
         cursor: pointer;
+      }
+
+      @page {
+        size: A4; /* Change from the default size of A4 */
+        margin: 1cm; /* Set margin on each page */
+      }
+
+      @media print {
+        .dataframe {
+          font-size: 7pt;
+          font-family: Arial, Helvetica, sans-serif;
+          border-collapse: collapse;
+          border: 1px solid black;
+        }
       }
     </style>
   </head>
@@ -73,11 +93,9 @@
 
     <hr />
 
+    <div><center>{{ m_table }}</center></div>
     <div>
-      <center>{{ m_table }}</center>
-    </div>
-    <div>
-      <center>{{ measurement_bar_chart}}</center>
+      <center>{{ bar_chart }}</center>
     </div>
 
     <hr />

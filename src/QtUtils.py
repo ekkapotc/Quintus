@@ -2,8 +2,6 @@ import os
 import logging
 import pip
 from functools import wraps
-from weasyprint import HTML, CSS
-from weasyprint.fonts import FontConfiguration
 
 def getPath(path):
     res = ''
@@ -43,7 +41,7 @@ def setDLLSearchPath():
            os.add_dll_directory(p)
        except OSError:
            pass
-
+        
 if __name__ == '__main__':
 
     #Test getPath()
@@ -51,4 +49,4 @@ if __name__ == '__main__':
     print('\tPath: ',path)
     print('\tFull Path: ',os.path.join(path,__file__))
 
-    #pip.main(['install', 'weasyprint'])
+    #pip.main(['install', 'fpdf'])
