@@ -1,13 +1,574 @@
-INFO:root:Ran with args: ('img was made...',), and kwargs: {}
-INFO:root:Ran with args: ('data already exists so nothing was done...',), and kwargs: {}
-INFO:root:Ran with args: ('tmp was made...',), and kwargs: {}
-INFO:root:Ran with args: ('report was made...',), and kwargs: {}
-INFO:root:Ran with args: ('templates already exists so nothing was done...',), and kwargs: {}
-INFO:root:Ran with args: ('config.ini already exists so nothing was done...',), and kwargs: {}
-INFO:root:Ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-1.html was made...',), and kwargs: {}
-INFO:root:Ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-2.html was made...',), and kwargs: {}
-INFO:root:Ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-3.html was made...',), and kwargs: {}
-INFO:root:Ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-4.html was made...',), and kwargs: {}
-INFO:root:Ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-5.html was made...',), and kwargs: {}
-INFO:root:Ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-6.html was made...',), and kwargs: {}
-INFO:root:Ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-7.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('img already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('data already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('tmp already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('report already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('templates already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('config.ini already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-1.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-2.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-3.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-4.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-5.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-6.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-7.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('img already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('data already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('tmp already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('report already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('templates already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('config.ini already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-1.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-2.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-3.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-4.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-5.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-6.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-7.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('img already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('data already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('tmp already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('report already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('templates already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('config.ini already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-1.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-2.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-3.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-4.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-5.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-6.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-7.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('img already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('data already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('tmp was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('report already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('templates already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('config.ini already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-1.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-2.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-3.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-4.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-5.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-6.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-7.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('img already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('data already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('tmp already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('report already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('templates already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('config.ini already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-1.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-2.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-3.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-4.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-5.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-6.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-7.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('img already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('data already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('tmp already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('report already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('templates already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('config.ini already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-1.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-2.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-3.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-4.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-5.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-6.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-7.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('img already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('data already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('tmp already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('report already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('templates already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('config.ini already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('img already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('data already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('tmp already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('report already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('templates already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('config.ini already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-1.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-2.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-3.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-4.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-5.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-6.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-7.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('img already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('data already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('tmp already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('report already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('templates already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('config.ini already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-1.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-2.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-3.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-4.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-5.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-6.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-7.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('img already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('data already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('tmp already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('report already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('templates already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('config.ini already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-1.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-2.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-3.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-4.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-5.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-6.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-7.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('img already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('data already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('tmp already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('report already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('templates already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('config.ini already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-1.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-2.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-3.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-4.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-5.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-6.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-7.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('img already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('data already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('tmp already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('report already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('templates already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('config.ini already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-1.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-2.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-3.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-4.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-5.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-6.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-7.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('img already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('data already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('tmp already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('report already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('templates already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('config.ini already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-1.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-2.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-3.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-4.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-5.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-6.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-7.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('img already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('data already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('tmp already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('report already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('templates already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('config.ini already exists so nothing was done...',), and kwargs: {}
+WARNING:weasyprint:Missing src descriptor in '@font-face' rule at 2:9
+INFO:root:displayInfo ran with args: ('img already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('data already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('tmp already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('report already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('templates already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('config.ini already exists so nothing was done...',), and kwargs: {}
+WARNING:weasyprint:Missing src descriptor in '@font-face' rule at 2:9
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-1.html was made...',), and kwargs: {}
+WARNING:weasyprint:Missing src descriptor in '@font-face' rule at 2:9
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-2.html was made...',), and kwargs: {}
+WARNING:weasyprint:Missing src descriptor in '@font-face' rule at 2:9
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-3.html was made...',), and kwargs: {}
+WARNING:weasyprint:Missing src descriptor in '@font-face' rule at 2:9
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-4.html was made...',), and kwargs: {}
+WARNING:weasyprint:Missing src descriptor in '@font-face' rule at 2:9
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-5.html was made...',), and kwargs: {}
+WARNING:weasyprint:Missing src descriptor in '@font-face' rule at 2:9
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-6.html was made...',), and kwargs: {}
+WARNING:weasyprint:Missing src descriptor in '@font-face' rule at 2:9
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-7.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('img already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('data already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('tmp already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('report already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('templates already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('config.ini already exists so nothing was done...',), and kwargs: {}
+WARNING:weasyprint:Missing src descriptor in '@font-face' rule at 2:9
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-1.html was made...',), and kwargs: {}
+WARNING:weasyprint:Missing src descriptor in '@font-face' rule at 2:9
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-2.html was made...',), and kwargs: {}
+WARNING:weasyprint:Missing src descriptor in '@font-face' rule at 2:9
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-3.html was made...',), and kwargs: {}
+WARNING:weasyprint:Missing src descriptor in '@font-face' rule at 2:9
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-4.html was made...',), and kwargs: {}
+WARNING:weasyprint:Missing src descriptor in '@font-face' rule at 2:9
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-5.html was made...',), and kwargs: {}
+WARNING:weasyprint:Missing src descriptor in '@font-face' rule at 2:9
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-6.html was made...',), and kwargs: {}
+WARNING:weasyprint:Missing src descriptor in '@font-face' rule at 2:9
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-7.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('img already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('data already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('tmp already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('report already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('templates already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('config.ini already exists so nothing was done...',), and kwargs: {}
+WARNING:weasyprint:Missing src descriptor in '@font-face' rule at 2:9
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-1.html was made...',), and kwargs: {}
+WARNING:weasyprint:Missing src descriptor in '@font-face' rule at 2:9
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-2.html was made...',), and kwargs: {}
+WARNING:weasyprint:Missing src descriptor in '@font-face' rule at 2:9
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-3.html was made...',), and kwargs: {}
+WARNING:weasyprint:Missing src descriptor in '@font-face' rule at 2:9
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-4.html was made...',), and kwargs: {}
+WARNING:weasyprint:Missing src descriptor in '@font-face' rule at 2:9
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-5.html was made...',), and kwargs: {}
+WARNING:weasyprint:Missing src descriptor in '@font-face' rule at 2:9
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-6.html was made...',), and kwargs: {}
+WARNING:weasyprint:Missing src descriptor in '@font-face' rule at 2:9
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-7.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('img already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('data already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('tmp already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('report already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('templates already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('config.ini already exists so nothing was done...',), and kwargs: {}
+WARNING:weasyprint:Missing src descriptor in '@font-face' rule at 2:9
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-1.html was made...',), and kwargs: {}
+WARNING:weasyprint:Missing src descriptor in '@font-face' rule at 2:9
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-2.html was made...',), and kwargs: {}
+WARNING:weasyprint:Missing src descriptor in '@font-face' rule at 2:9
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-3.html was made...',), and kwargs: {}
+WARNING:weasyprint:Missing src descriptor in '@font-face' rule at 2:9
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-4.html was made...',), and kwargs: {}
+WARNING:weasyprint:Missing src descriptor in '@font-face' rule at 2:9
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-5.html was made...',), and kwargs: {}
+WARNING:weasyprint:Missing src descriptor in '@font-face' rule at 2:9
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-6.html was made...',), and kwargs: {}
+WARNING:weasyprint:Missing src descriptor in '@font-face' rule at 2:9
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-7.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('img already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('data already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('tmp already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('report already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('templates already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('config.ini already exists so nothing was done...',), and kwargs: {}
+WARNING:weasyprint:Missing src descriptor in '@font-face' rule at 2:9
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-1.html was made...',), and kwargs: {}
+WARNING:weasyprint:Missing src descriptor in '@font-face' rule at 2:9
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-2.html was made...',), and kwargs: {}
+WARNING:weasyprint:Missing src descriptor in '@font-face' rule at 2:9
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-3.html was made...',), and kwargs: {}
+WARNING:weasyprint:Missing src descriptor in '@font-face' rule at 2:9
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-4.html was made...',), and kwargs: {}
+WARNING:weasyprint:Missing src descriptor in '@font-face' rule at 2:9
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-5.html was made...',), and kwargs: {}
+WARNING:weasyprint:Missing src descriptor in '@font-face' rule at 2:9
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-6.html was made...',), and kwargs: {}
+WARNING:weasyprint:Missing src descriptor in '@font-face' rule at 2:9
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-7.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('img already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('data already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('tmp already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('report already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('templates already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('config.ini already exists so nothing was done...',), and kwargs: {}
+WARNING:weasyprint:Missing src descriptor in '@font-face' rule at 2:9
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-1.html was made...',), and kwargs: {}
+WARNING:weasyprint:Missing src descriptor in '@font-face' rule at 2:9
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-2.html was made...',), and kwargs: {}
+WARNING:weasyprint:Missing src descriptor in '@font-face' rule at 2:9
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-3.html was made...',), and kwargs: {}
+WARNING:weasyprint:Missing src descriptor in '@font-face' rule at 2:9
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-4.html was made...',), and kwargs: {}
+WARNING:weasyprint:Missing src descriptor in '@font-face' rule at 2:9
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-5.html was made...',), and kwargs: {}
+WARNING:weasyprint:Missing src descriptor in '@font-face' rule at 2:9
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-6.html was made...',), and kwargs: {}
+WARNING:weasyprint:Missing src descriptor in '@font-face' rule at 2:9
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-7.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('img already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('data already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('tmp already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('report already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('templates already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('config.ini already exists so nothing was done...',), and kwargs: {}
+WARNING:weasyprint:Missing src descriptor in '@font-face' rule at 2:25
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-1.html was made...',), and kwargs: {}
+WARNING:weasyprint:Missing src descriptor in '@font-face' rule at 2:25
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-2.html was made...',), and kwargs: {}
+WARNING:weasyprint:Missing src descriptor in '@font-face' rule at 2:25
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-3.html was made...',), and kwargs: {}
+WARNING:weasyprint:Missing src descriptor in '@font-face' rule at 2:25
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-4.html was made...',), and kwargs: {}
+WARNING:weasyprint:Missing src descriptor in '@font-face' rule at 2:25
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-5.html was made...',), and kwargs: {}
+WARNING:weasyprint:Missing src descriptor in '@font-face' rule at 2:25
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-6.html was made...',), and kwargs: {}
+WARNING:weasyprint:Missing src descriptor in '@font-face' rule at 2:25
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-7.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('img already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('data already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('tmp already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('report already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('templates already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('config.ini already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('img already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('data already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('tmp already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('report already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('templates already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('config.ini already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-1.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-2.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-3.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-4.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-5.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-6.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-7.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('img already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('data already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('tmp already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('report already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('templates already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('config.ini already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-1.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-2.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-3.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-4.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-5.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-6.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-7.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('img already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('data already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('tmp already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('report already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('templates already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('config.ini already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-1.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-2.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-3.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-4.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-5.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-6.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-7.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('img already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('data already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('tmp already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('report already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('templates already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('config.ini already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('img already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('data already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('tmp already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('report already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('templates already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('config.ini already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-1.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-2.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-3.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-4.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-5.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-6.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-7.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('img already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('data already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('tmp already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('report already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('templates already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('config.ini already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-1.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-2.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-3.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-4.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-5.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-6.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-7.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('img already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('data already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('tmp was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('report was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('templates already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('config.ini already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-1.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-2.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-3.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-4.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-5.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-6.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-7.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('img already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('data already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('tmp was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('report was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('templates already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('config.ini already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-1.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-2.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-3.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-4.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-5.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-6.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-7.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('img already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('data already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('tmp already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('report already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('templates already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('config.ini already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-1.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-2.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-3.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-4.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-5.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-6.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-7.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('img already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('data already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('tmp already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('report already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('templates already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('config.ini already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-1.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-2.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-3.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-4.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-5.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-6.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-7.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('img already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('data already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('tmp already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('report already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('templates already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('config.ini already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-1.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-2.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-3.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-4.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-5.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-6.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-7.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('img already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('data already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('tmp already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('report already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('templates already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('config.ini already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-1.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-2.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-3.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-4.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-5.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-6.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-7.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('img already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('data already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('tmp already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('report already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('templates already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('config.ini already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-1.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-2.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-3.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-4.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-5.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-6.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-7.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('img already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('data already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('tmp already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('report already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('templates already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('config.ini already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-1.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-2.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-3.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-4.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-5.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-6.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-7.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('img already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('data already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('tmp already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('report already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('templates already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('config.ini already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-1.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-2.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-3.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-4.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-5.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-6.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-7.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('img already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('data already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('tmp already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('report already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('templates already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('config.ini already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-1.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-2.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-3.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-4.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-5.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-6.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-7.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('img already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('data already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('tmp already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('report already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('templates already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('config.ini already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-1.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-2.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-3.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-4.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-5.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-6.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-7.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('img already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('data already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('tmp already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('report already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('templates already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('config.ini already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-1.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-2.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-3.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-4.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-5.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-6.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-7.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('img already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('data already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('tmp already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('report already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('templates already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('config.ini already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('img already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('data already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('tmp already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('report already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('templates already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('config.ini already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-1.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-2.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-3.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-4.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-5.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-6.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-7.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('img already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('data already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('tmp already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('report already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('templates already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('config.ini already exists so nothing was done...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-1.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-2.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-3.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-4.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-5.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-6.html was made...',), and kwargs: {}
+INFO:root:displayInfo ran with args: ('C:\\Workspace\\Quintus\\tmp\\07000178.pac-7.html was made...',), and kwargs: {}

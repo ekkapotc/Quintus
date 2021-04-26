@@ -1,9 +1,11 @@
-import pandas as pd
-from jinja2 import Environment, FileSystemLoader
 import os
 import math
 import configparser
 import datetime
+import pandas as pd
+from weasyprint import HTML,CSS
+from weasyprint.fonts import FontConfiguration
+from jinja2 import Environment, FileSystemLoader
 import QtUtils
 import QtConfigure
 
@@ -12,6 +14,9 @@ class QtReport:
     def __init__( self , csv_file , * , report_file_name , airport_name ,way_name , agent_name , date_of_report , time_of_report ):
         #Configure the underlying settings
         QtConfigure.QtConfig()
+
+        #Configure the DLL searc path the weasyprint module depends on 
+        QtUtils.setDLLSearchPath()
 
         #Initialize report's parameters
         self.reportFileName = report_file_name
@@ -51,6 +56,11 @@ class QtReport:
         
         with open( new_HTML , "w" ) as html_file: 
             html_file.write(each_page)
+
+        #Compute the name of the current PDF 
+        new_PDF = os.path.join( config['Locations']['reportlocation'] , '{0}-{1}.pdf'.format(self.reportFileName,page_num+1) )
+
+        HTML(string=each_page).write_pdf( new_PDF )
 
         QtUtils.displayInfo('{0} was made...'.format(new_HTML))
 

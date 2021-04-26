@@ -6,7 +6,7 @@ import numpy as np
 def random_date():
     current_datetime= datetime.datetime.now()
     random_datetime = current_datetime + random.random()*datetime.timedelta(minutes=1)
-    return random_datetime
+    return random_datetime.replace(microsecond=0)
 
 records = int(input('Enter the number of records to generate: '))
 
