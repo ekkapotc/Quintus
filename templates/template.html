@@ -26,14 +26,20 @@
         color: #000;
       }
 
+      .dataframe th {
+        border-bottom-color: #232542;
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+      }
+
       .dataframe td,
       th {
         padding: 2px;
         text-align: center;
 
-        border-top-color: #232542;
+        /*order-top-color: #232542;
         border-top-style: solid;
-        border-top-width: 1px;
+        border-top-width: 1px;*/
 
         border-left-color: #232542;
         border-left-style: solid;
@@ -109,63 +115,9 @@
     <hr />
 
     <div>
-      <p style="text-align: right">
-        <span class="span"><b>Date of Report:</b> {{date_of_report}}</span>
-        <span class="span"
-          >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
-        >
-        <span class="span"
-          >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
-        >
-        <span class="span"
-          >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
-        >
-        <span class="span"
-          >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
-        >
-        <span class="span"
-          >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
-        >
-        <span class="span"
-          >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
-        >
-        <span class="span"
-          >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
-        >
-        <span class="span"
-          >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
-        >
-        <span class="span"
-          >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
-        >
-        <span class="span"
-          >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
-        >
-        <span class="span"
-          >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
-        >
-        <span class="span"
-          >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
-        >
-        <span class="span"
-          >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
-        >
-
-        <span class="span"
-          >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
-        >
-        <span class="span"
-          >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
-        >
-
-        <span class="span"><b>Page:</b> {{page_no}}</span>
-
-        <span class="span"
-          >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
-        >
-        <span class="span"
-          >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
-        >
+      <p style="text-align: left">
+        <b>Date of Report:</b> {{date_of_report}}
+        <span style="float: right"><b>Page:</b> {{page_no}}</span>
       </p>
     </div>
   </body>
