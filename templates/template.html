@@ -7,27 +7,50 @@
       * {
         font-size: 10pt;
         font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      p {
+        padding: 5px;
       }
 
-      hr {
+      .container {
+        display: flex;
+        justify-content: center;
+      }
+
+      #airport-name {
+        margin-top: 5px;
+        margin-bottom: 10px;
+      }
+
+      #top-hr-line {
         border-top: 1px solid black;
         border-bottom: none;
+        margin-bottom: 10px;
+      }
+
+      #bottom-hr-line {
+        border-top: 1px solid black;
+        border-bottom: none;
+        margin-top: 10px;
       }
 
       .dataframe {
         font-size: 7pt;
         border-collapse: collapse;
-        border: 1px solid #232542;
+        border: 1px solid black;
       }
 
       .dataframe thead {
         padding: 2px;
         font-size: 10pt;
-        color: #000;
+        color: black;
       }
 
       .dataframe th {
-        border-bottom-color: #232542;
+        border-bottom-color: black;
         border-bottom-style: solid;
         border-bottom-width: 1px;
       }
@@ -37,11 +60,7 @@
         padding: 2px;
         text-align: center;
 
-        /*order-top-color: #232542;
-        border-top-style: solid;
-        border-top-width: 1px;*/
-
-        border-left-color: #232542;
+        border-left-color: black;
         border-left-style: solid;
         border-left-width: 1px;
       }
@@ -56,23 +75,14 @@
       }
 
       @page {
-        size: A4; /* Change from the default size of A4 */
-        margin: 1cm; /* Set margin on each page */
-      }
-
-      @media print {
-        .dataframe {
-          font-size: 7pt;
-          font-family: Arial, Helvetica, sans-serif;
-          border-collapse: collapse;
-          border: 1px solid black;
-        }
+        size: A4;
+        margin: 1cm;
       }
     </style>
   </head>
   <body>
     <div>
-      <h2><center>{{air_port_name}}</center></h2>
+      <h1 id="airport-name"><center>{{air_port_name}}</center></h1>
     </div>
     <div>
       <p>
@@ -90,6 +100,7 @@
           <span class="span"><b>Time of Report:</b> {{time_of_report}}</span>
         </center>
       </p>
+
       <p>
         <center>
           <span class="span"><b>Way Name:</b> {{way_name}} </span>
@@ -105,14 +116,17 @@
       </p>
     </div>
 
-    <hr />
+    <hr id="top-hr-line" />
 
-    <div><center>{{ m_table }}</center></div>
-    <div>
+    <div class="container">
+      <center>{{ m_table }}</center>
+    </div>
+
+    <div class="container">
       <center>{{ bar_chart }}</center>
     </div>
 
-    <hr />
+    <hr id="bottom-hr-line" />
 
     <div>
       <p style="text-align: left">

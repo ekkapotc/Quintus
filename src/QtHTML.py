@@ -6,6 +6,7 @@ import pandas as pd
 from weasyprint import HTML,CSS
 from weasyprint.fonts import FontConfiguration
 from jinja2 import Environment, FileSystemLoader
+from matplotlib import pyplot as plt
 import QtUtils
 import QtConfigure
 
@@ -28,9 +29,63 @@ class QtReport:
 
         #Construct dataframe    
         self.df = pd.read_csv(csv_file)
+
+        self.__transformDF()
+
         config = configparser.ConfigParser()
         config.read('config.ini')
         #self.df.set_index(config['DataFrame']['indexColumn'],inplace=True)
+
+    def __transformDF(self):
+
+       #Initialize values for new three columns
+       data = [0 for i in range(self.df.shape[0])]
+
+       #Insert three new columns 'AVG(cd)', 'Max(cd)' and '%ICAO'
+       self.df.insert(1, 'AVG(cd)', data)
+       self.df.insert(2, 'Max(cd)', data)
+       self.df.insert(3, '%ICAO',data)
+
+       #Drop column 'Timestamp'
+       self.df.drop('Timestamp', inplace=True, axis=1) 
+
+       #Compute the average and max across the Vs columns for each row
+       self.df['AVG(cd)'] = self.df[['V1', 'V2','V3','V4','V5','V6','V7','V8']].mean(axis=1)
+       self.df['Max(cd)'] = self.df[['V1', 'V2','V3','V4','V5','V6','V7','V8']].max(axis=1)
+
+       #Drop the Vs columns
+       self.df.drop(['V1', 'V2','V3','V4','V5','V6','V7','V8'], inplace=True, axis=1) 
+
+       self.__plot()
+
+    def __plot(self):
+        light_ids = []
+
+        for i in range(self.df.shape[0]):
+            light_ids.append(i+1)
+
+        avgs = []
+
+        for _, row in self.df.iterrows():
+            avgs.append(row['AVG(cd)'])
+
+        x_ticks = []
+
+        for i in range(0,self.df.shape[0],5):
+            x_ticks.append(i)
+
+        plt.xticks(ticks=x_ticks)
+        plt.xlabel('Light ID')
+        plt.ylabel('Average Candela (in cd)')
+        plt.bar( light_ids , avgs )
+
+        config = configparser.ConfigParser()
+        config.read('config.ini')
+        plot_path = os.path.join( config['Locations']['imagelocation'] , '{0}.png'.format(self.reportFileName) )
+        
+        #save the plot
+        plt.savefig( plot_path , dpi=400 )
+        #plt.show()
 
     def __oneHTML( self , page_num , start_row , end_row ):
         #Get the entries for the current page
