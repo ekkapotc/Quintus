@@ -1,5 +1,6 @@
 import os
 import logging
+import pip
 from functools import wraps
 
 def getPath(path):
@@ -32,9 +33,20 @@ def getTime(datetime):
 def displayInfo(msg):
     pass
 
+def setDLLSearchPath():
+   if os.name != "nt" or not hasattr(os, "add_dll_directory"):
+       return
+   for p in os.environ.get("PATH", "").split(os.pathsep):
+       try:
+           os.add_dll_directory(p)
+       except OSError:
+           pass
+        
 if __name__ == '__main__':
 
     #Test getPath()
     path = 'C:\\Workspace\\Quintus\\'
     print('\tPath: ',path)
     print('\tFull Path: ',os.path.join(path,__file__))
+
+    #pip.main(['install', 'fpdf'])
