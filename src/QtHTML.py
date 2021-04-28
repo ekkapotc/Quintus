@@ -96,7 +96,7 @@ class QtReport:
         config.read('config.ini')
         
         #plot_path = os.path.join( config['Locations']['imagelocation'] , '{0}.png'.format(self.reportFileName) )
-
+      
         #Render each page 
         each_page =  self.template.render(
                                     m_table=m_table,
@@ -120,6 +120,7 @@ class QtReport:
         #Compute the name of the current PDF 
         new_PDF_path = os.path.join( config['Locations']['reportlocation'] , '{0}-{1}.pdf'.format(self.reportFileName,page_num+1) )
 
+       
         HTML(string=each_page,base_url='.').write_pdf( new_PDF_path ) 
 
         QtUtils.displayInfo('{0} was made...'.format(new_HTML))
