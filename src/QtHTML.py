@@ -36,28 +36,6 @@ class QtReport:
         config.read('config.ini')
         #self.df.set_index(config['DataFrame']['indexColumn'],inplace=True)
 
-    def __transformDF(self):
-
-       #Initialize values for new three columns
-       data = [0 for i in range(self.df.shape[0])]
-
-       #Insert three new columns 'AVG(cd)', 'Max(cd)' and '%ICAO'
-       self.df.insert(1, 'AVG(cd)', data)
-       self.df.insert(2, 'Max(cd)', data)
-       self.df.insert(3, '%ICAO',data)
-
-       #Drop column 'Timestamp'
-       self.df.drop('Timestamp', inplace=True, axis=1) 
-
-       #Compute the average and max across the Vs columns for each row
-       self.df['AVG(cd)'] = self.df[['V1', 'V2','V3','V4','V5','V6','V7','V8']].mean(axis=1)
-       self.df['Max(cd)'] = self.df[['V1', 'V2','V3','V4','V5','V6','V7','V8']].max(axis=1)
-
-       #Drop the Vs columns
-       self.df.drop(['V1', 'V2','V3','V4','V5','V6','V7','V8'], inplace=True, axis=1) 
-
-       self.__plot()
-
     def __plot(self):
         light_ids = []
 
@@ -86,6 +64,28 @@ class QtReport:
         #save the plot
         plt.savefig( plot_path , dpi=400 )
         #plt.show()
+
+    def __transformDF(self):
+
+       #Initialize values for new three columns
+       data = [0 for i in range(self.df.shape[0])]
+
+       #Insert three new columns 'AVG(cd)', 'Max(cd)' and '%ICAO'
+       self.df.insert(1, 'AVG(cd)', data)
+       self.df.insert(2, 'Max(cd)', data)
+       self.df.insert(3, '%ICAO',data)
+
+       #Drop column 'Timestamp'
+       self.df.drop('Timestamp', inplace=True, axis=1) 
+
+       #Compute the average and max across the Vs columns for each row
+       self.df['AVG(cd)'] = self.df[['V1', 'V2','V3','V4','V5','V6','V7','V8']].mean(axis=1)
+       self.df['Max(cd)'] = self.df[['V1', 'V2','V3','V4','V5','V6','V7','V8']].max(axis=1)
+
+       #Drop the Vs columns
+       self.df.drop(['V1', 'V2','V3','V4','V5','V6','V7','V8'], inplace=True, axis=1) 
+
+       self.__plot()
 
     def __oneHTML( self , page_num , start_row , end_row ):
         #Get the entries for the current page
