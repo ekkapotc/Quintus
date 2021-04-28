@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <meta charset="UTF-8" />
+    <title></title>
+    <style>
+      * {
+        font-size: 10pt;
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      p {
+        padding: 5px;
+      }
+
+      img {
+        width: 100%;
+        height: 50%;
+      }
+
+      .container {
+        display: flex;
+        justify-content: center;
+      }
+
+      #airport-name {
+        margin-top: 5px;
+        margin-bottom: 10px;
+      }
+
+      #top-hr-line {
+        border-top: 1px solid black;
+        border-bottom: none;
+        margin-bottom: 10px;
+      }
+
+      #bottom-hr-line {
+        border-top: 1px solid black;
+        border-bottom: none;
+        margin-top: 10px;
+      }
+
+      .dataframe {
+        font-size: 7pt;
+        border-collapse: collapse;
+        border: 1px solid black;
+      }
+
+      .dataframe thead {
+        padding: 2px;
+        font-size: 10pt;
+        color: black;
+      }
+
+      .dataframe th {
+        border-bottom-color: black;
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+      }
+
+      .dataframe td,
+      th {
+        padding: 2px;
+        text-align: center;
+
+        border-left-color: black;
+        border-left-style: solid;
+        border-left-width: 1px;
+      }
+
+      .dataframe tr:nth-child(even) {
+        background: #e0e0e0;
+      }
+
+      .dataframe tr:hover {
+        background: rgb(112, 105, 105);
+        cursor: pointer;
+      }
+
+      @page {
+        size: A4;
+        margin: 1cm;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1 id="airport-name"><center>Betong International Airport</center></h1>
+    </div>
+    <div>
+      <p>
+        <center>
+          <span class="span"
+            ><b>Report File Name:</b> 07000178.pac</span
+          >
+          <span class="span"
+            >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
+          >
+          <span class="span"><b>Date of Report:</b> 28/04/2021 </span>
+          <span class="span"
+            >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
+          >
+          <span class="span"><b>Time of Report:</b> 23:40:51</span>
+        </center>
+      </p>
+
+      <p>
+        <center>
+          <span class="span"><b>Way Name:</b> RUNWAY EDGE - 07L </span>
+          <span class="span"
+            >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
+          >
+          <span class="span"><b>Agent:</b> FBT_Sp </span>
+          <span class="span"
+            >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
+          >
+          <span class="span"><em>(Not Cross Checked)</em></span>
+        </center>
+      </p>
+    </div>
+
+    <hr id="top-hr-line" />
+
+    <div class="container">
+      <center><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>LightID</th>
+      <th>AVG(cd)</th>
+      <th>Max(cd)</th>
+      <th>%ICAO</th>
+      <th>Distance</th>
+      <th>Color</th>
+      <th>Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>46</td>
+      <td>15.38125</td>
+      <td>21.81</td>
+      <td>0</td>
+      <td>1.40</td>
+      <td>Y</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+      <td>47</td>
+      <td>16.87875</td>
+      <td>21.86</td>
+      <td>0</td>
+      <td>1.63</td>
+      <td>G</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+      <td>48</td>
+      <td>14.75125</td>
+      <td>19.62</td>
+      <td>0</td>
+      <td>1.49</td>
+      <td>W</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+      <td>49</td>
+      <td>14.98750</td>
+      <td>21.13</td>
+      <td>0</td>
+      <td>0.92</td>
+      <td>G</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+      <td>50</td>
+      <td>13.32000</td>
+      <td>18.30</td>
+      <td>0</td>
+      <td>1.43</td>
+      <td>R</td>
+      <td>Fail</td>
+    </tr>
+    <tr>
+      <td>51</td>
+      <td>14.47500</td>
+      <td>19.36</td>
+      <td>0</td>
+      <td>1.00</td>
+      <td>Y</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+      <td>52</td>
+      <td>13.57375</td>
+      <td>18.46</td>
+      <td>0</td>
+      <td>0.73</td>
+      <td>Y</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+      <td>53</td>
+      <td>14.49250</td>
+      <td>20.73</td>
+      <td>0</td>
+      <td>1.68</td>
+      <td>Y</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+      <td>54</td>
+      <td>16.07125</td>
+      <td>19.70</td>
+      <td>0</td>
+      <td>0.52</td>
+      <td>Y</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+      <td>55</td>
+      <td>16.50250</td>
+      <td>21.61</td>
+      <td>0</td>
+      <td>1.06</td>
+      <td>Y</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+      <td>56</td>
+      <td>15.32125</td>
+      <td>20.18</td>
+      <td>0</td>
+      <td>1.22</td>
+      <td>R</td>
+      <td>Pass</td>
+    </tr>
+  </tbody>
+</table></center>
+    </div>
+
+    <div>
+      <center><img src="../img/07000178.pac.png" /></center>
+    </div>
+
+    <hr id="bottom-hr-line" />
+
+    <div>
+      <p style="text-align: left">
+        <b>Date of Report:</b> 28/04/2021
+        <span style="float: right"><b>Page:</b> 4</span>
+      </p>
+    </div>
+  </body>
+</html>
