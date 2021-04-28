@@ -91,6 +91,12 @@ class QtReport:
         #Get the entries for the current page
         cur_df = self.df.iloc[start_row:end_row+1] #end_row exclusive
         m_table = cur_df.to_html(index=False) 
+
+        config = configparser.ConfigParser()
+        config.read('config.ini')
+        
+        #plot_path = os.path.join( config['Locations']['imagelocation'] , '{0}.png'.format(self.reportFileName) )
+
         #Render each page 
         each_page =  self.template.render(
                                     m_table=m_table,
@@ -100,11 +106,10 @@ class QtReport:
                                     way_name=self.wayName,
                                     agent_name=self.agentName,
                                     date_of_report=self.dateOfReport,
-                                    time_of_report=self.timeOfReport
+                                    time_of_report=self.timeOfReport,
+                                    plot_path='{0}.png'.format(self.reportFileName)
                                 )
         #Export as HTML to the tmp folder specified by tempLocation in the config.ini file
-        config = configparser.ConfigParser()
-        config.read('config.ini')
         
         #Compute the name of the current HTML
         new_HTML = os.path.join( config['Locations']['templocation'] , '{0}-{1}.html'.format(self.reportFileName,page_num+1) )
@@ -115,7 +120,7 @@ class QtReport:
         #Compute the name of the current PDF 
         new_PDF_path = os.path.join( config['Locations']['reportlocation'] , '{0}-{1}.pdf'.format(self.reportFileName,page_num+1) )
 
-        HTML(string=each_page).write_pdf( new_PDF_path ) 
+        HTML(string=each_page,base_url='.').write_pdf( new_PDF_path ) 
 
         QtUtils.displayInfo('{0} was made...'.format(new_HTML))
 
