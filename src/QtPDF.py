@@ -29,6 +29,9 @@ class QtReport:
         self.dateOfReport = date_of_report
         self.timeOfReport = time_of_report
 
+        #Initialze a list for keeping track of the individual pdf files generated 
+        self.pdfNames = []
+
         #Construct dataframe    
         self.df = pd.read_csv(csv_file)
 
@@ -89,14 +92,12 @@ class QtReport:
        #Plot the barchart
        self.__plot()
 
-    def __oneHTML( self , page_num , start_row , end_row ):
+    def __generateOnePDF( self , page_num , start_row , end_row ):
+
         #Get the entries for the current page
         cur_df = self.df.iloc[start_row:end_row+1] #end_row exclusive
         m_table = cur_df.to_html(index=False) 
 
-        #config = configparser.ConfigParser()
-        #config.read('config.ini')
-        
         #Render each page 
         each_page =  self.template.render(
                                     m_table=m_table,
@@ -109,8 +110,9 @@ class QtReport:
                                     time_of_report=self.timeOfReport,
                                     plot_path='{0}.png'.format(self.reportFileName)
                                 )
-        #Export as HTML to the tmp folder specified by tempLocation in the config.ini file
         
+        self.pdfNames.append('{0}-{1}.pdf'.format(self.reportFileName,page_num))
+
         #Compute the name of the current HTML
         new_HTML_path = os.path.join( self.config['Locations']['templocation'] , '{0}-{1}.html'.format(self.reportFileName,page_num) )
         
@@ -122,9 +124,7 @@ class QtReport:
         self.__onePDF(html_page=each_page,report_file_name=self.reportFileName,page_num=page_num)
 
     def __onePDF(self,*,html_page,report_file_name,page_num):
-        #config = configparser.ConfigParser()
-        #config.read('config.ini')
-        
+      
         new_PDF_path = os.path.join( self.config['Locations']['templocation'] , '{0}-{1}.pdf'.format(report_file_name,page_num) )
 
         HTML(string=html_page,base_url='.').write_pdf( new_PDF_path ) 
@@ -139,7 +139,7 @@ class QtReport:
         merge_list = []
 
         for file in os.listdir(input_dir):
-            if file.endswith('.pdf') and file.startswith(self.reportFileName):
+            if file in self.pdfNames:
                 merge_list.append(input_dir+os.sep+file)
 
         sorted(merge_list)
@@ -174,7 +174,7 @@ class QtReport:
                 end_row = num_of_rows
 
             #Export the current page as HTML
-            self.__oneHTML( page_num , start_row , end_row )
+            self.__generateOnePDF( page_num , start_row , end_row )
 
             row = end_row+1
             page_num += 1
