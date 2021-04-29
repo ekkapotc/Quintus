@@ -41,6 +41,7 @@ class QtReport:
         #config.read('config.ini')
 
     def __plot(self):
+
         light_ids = []
 
         for i in range(self.df.shape[0]):
@@ -55,19 +56,33 @@ class QtReport:
 
         for i in range(0,self.df.shape[0],5):
             x_ticks.append(i)
+        
+        colors = []
+
+        for i, row in self.df.iterrows():
+            if row['Color'] == 'R':
+                colors.append('red')
+            elif row['Color'] == 'Y':
+                colors.append('orange')
+            elif row['Color'] == 'W':
+                colors.append('yellow')
+            elif row['Color'] == 'G':
+                colors.append('green')
+            else:
+                color.append('grey')
+            
 
         plt.xticks(ticks=x_ticks)
         plt.xlabel('Light ID')
         plt.ylabel('Average Candela (in cd)')
-        plt.bar( light_ids , avgs )
 
-        #config = configparser.ConfigParser()
-        #config.read('config.ini')
+        bars = plt.bar( light_ids , avgs , color=colors )
+
+      
         plot_path = os.path.join( self.config['Locations']['imagelocation'] , '{0}.png'.format(self.reportFileName) )
         
         #save the plot
         plt.savefig( plot_path , dpi=400 )
-        #plt.show()
 
     def __transformDF(self):
 
@@ -85,6 +100,8 @@ class QtReport:
        #Compute the average and max across the Vs columns for each row
        self.df['AVG(cd)'] = self.df[['V1', 'V2','V3','V4','V5','V6','V7','V8']].mean(axis=1)
        self.df['Max(cd)'] = self.df[['V1', 'V2','V3','V4','V5','V6','V7','V8']].max(axis=1)
+
+       #Calculare %ICAO : TO-DO
 
        #Drop the Vs columns
        self.df.drop(['V1', 'V2','V3','V4','V5','V6','V7','V8'], inplace=True, axis=1) 
