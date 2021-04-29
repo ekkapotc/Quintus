@@ -41,11 +41,11 @@ class QtConfig:
             #Instantiate a config parser
             config = configparser.ConfigParser()
             #Intialize key paths
-            img_folder = os.path.join(QtUtils.getPath(self.rootPath), QConfig.__directories['img'])
-            data_folder = os.path.join(QtUtils.getPath(self.rootPath), QConfig.__directories['data'])
-            tmp_folder = os.path.join(QtUtils.getPath(self.rootPath), QConfig.__directories['tmp'])
-            report_folder = os.path.join(QtUtils.getPath(self.rootPath), QConfig.__directories['report'])
-            template_folder = os.path.join(QtUtils.getPath(self.rootPath), QConfig.__directories['templates'])
+            img_folder = os.path.join(QtUtils.getPath(self.rootPath), QtConfig.__directories['img'])
+            data_folder = os.path.join(QtUtils.getPath(self.rootPath), QtConfig.__directories['data'])
+            tmp_folder = os.path.join(QtUtils.getPath(self.rootPath), QtConfig.__directories['tmp'])
+            report_folder = os.path.join(QtUtils.getPath(self.rootPath), QtConfig.__directories['report'])
+            template_folder = os.path.join(QtUtils.getPath(self.rootPath), QtConfig.__directories['templates'])
 
             #Define sections in the config file
             config['Locations'] = {'imageLocation': img_folder,
