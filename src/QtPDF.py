@@ -1,7 +1,7 @@
 import os
 import math
 import configparser
-import datetime
+import PyPDF2
 import pandas as pd
 from weasyprint import HTML,CSS
 from weasyprint.fonts import FontConfiguration
@@ -131,6 +131,8 @@ class QtReport:
 
         QtUtils.displayInfo('{0} was made...'.format(new_PDF_path))
 
+    def __mergePDFs(self):
+        pass
 
     def generate( self ):
         #config = configparser.ConfigParser()
@@ -161,7 +163,11 @@ class QtReport:
 
 #Test the module
 if __name__ == '__main__':
+
+    import datetime
+    
     datetime_of_report = datetime.datetime.today()
+
     headerData = {  
                     'report_file_name':'07000178.pac',
                     'airport_name':'Betong International Airport',
