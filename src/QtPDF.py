@@ -15,6 +15,8 @@ class QtReport:
     def __init__( self , csv_file , * , report_file_name , airport_name ,way_name , agent_name , date_of_report , time_of_report ):
         #Configure the underlying settings
         QtConfigure.QtConfig()
+        self.config = configparser.ConfigParser();
+        self.config.read("config.ini")
         
         #Configure the DLL searc path the weasyprint module depends on 
         QtUtils.setDLLSearchPath()
@@ -32,8 +34,8 @@ class QtReport:
 
         self.__transformDF()
 
-        config = configparser.ConfigParser()
-        config.read('config.ini')
+        #config = configparser.ConfigParser()
+        #config.read('config.ini')
 
     def __plot(self):
         light_ids = []
@@ -56,9 +58,9 @@ class QtReport:
         plt.ylabel('Average Candela (in cd)')
         plt.bar( light_ids , avgs )
 
-        config = configparser.ConfigParser()
-        config.read('config.ini')
-        plot_path = os.path.join( config['Locations']['imagelocation'] , '{0}.png'.format(self.reportFileName) )
+        #config = configparser.ConfigParser()
+        #config.read('config.ini')
+        plot_path = os.path.join( self.config['Locations']['imagelocation'] , '{0}.png'.format(self.reportFileName) )
         
         #save the plot
         plt.savefig( plot_path , dpi=400 )
@@ -92,13 +94,13 @@ class QtReport:
         cur_df = self.df.iloc[start_row:end_row+1] #end_row exclusive
         m_table = cur_df.to_html(index=False) 
 
-        config = configparser.ConfigParser()
-        config.read('config.ini')
+        #config = configparser.ConfigParser()
+        #config.read('config.ini')
         
         #Render each page 
         each_page =  self.template.render(
                                     m_table=m_table,
-                                    page_no=page_num+1, 
+                                    page_no=page_num, 
                                     report_file_name=self.reportFileName,
                                     air_port_name=self.airportName,
                                     way_name=self.wayName,
@@ -110,26 +112,20 @@ class QtReport:
         #Export as HTML to the tmp folder specified by tempLocation in the config.ini file
         
         #Compute the name of the current HTML
-        new_HTML_path = os.path.join( config['Locations']['templocation'] , '{0}-{1}.html'.format(self.reportFileName,page_num+1) )
+        new_HTML_path = os.path.join( self.config['Locations']['templocation'] , '{0}-{1}.html'.format(self.reportFileName,page_num) )
         
         with open( new_HTML_path , "w" ) as html_file: 
             html_file.write(each_page)
 
         QtUtils.displayInfo('{0} was made...'.format(new_HTML_path))
 
-        self.__onePDF(html_page=each_page,report_file_name=self.reportFileName,page_num=page_num+1)
+        self.__onePDF(html_page=each_page,report_file_name=self.reportFileName,page_num=page_num)
 
-        #Compute the name of the current PDF 
-        #new_PDF_path = os.path.join( config['Locations']['reportlocation'] , '{0}-{1}.pdf'.format(self.reportFileName,page_num+1) )
-
-        #HTML(string=each_page,base_url='.').write_pdf( new_PDF_path ) 
-        #QtUtils.displayInfo('{0} was made...'.format(new_PDF_path))
-    
     def __onePDF(self,*,html_page,report_file_name,page_num):
-        config = configparser.ConfigParser()
-        config.read('config.ini')
+        #config = configparser.ConfigParser()
+        #config.read('config.ini')
         
-        new_PDF_path = os.path.join( config['Locations']['reportlocation'] , '{0}-{1}.pdf'.format(report_file_name,page_num) )
+        new_PDF_path = os.path.join( self.config['Locations']['templocation'] , '{0}-{1}.pdf'.format(report_file_name,page_num) )
 
         HTML(string=html_page,base_url='.').write_pdf( new_PDF_path ) 
 
@@ -137,22 +133,22 @@ class QtReport:
 
 
     def generate( self ):
-        config = configparser.ConfigParser()
-        config.read('config.ini')
+        #config = configparser.ConfigParser()
+        #config.read('config.ini')
 
-        file_loader = FileSystemLoader(config['Locations']['templatelocation']) 
+        file_loader = FileSystemLoader(self.config['Locations']['templatelocation']) 
         env = Environment(loader=file_loader,trim_blocks=True)
         self.template = env.get_template('template.html') 
 
         #Get the total number of entries
         num_of_rows  = self.df.shape[0]
         #Calculate the number of pages based on the config where the number of entries per page is set
-        num_of_pages = math.ceil(num_of_rows/int(config['ReportFormat']['numberofrowsperpage']))
+        num_of_pages = math.ceil(num_of_rows/int(self.config['ReportFormat']['numberofrowsperpage']))
         
         row = 0
-        for page_num in range(num_of_pages):
+        for page_num in range(1,num_of_pages+1):
             start_row = row
-            end_row = start_row + int(config['ReportFormat']['numberofrowsperpage']) -1
+            end_row = start_row + int(self.config['ReportFormat']['numberofrowsperpage']) -1
 
             if end_row > num_of_rows:
                 end_row = num_of_rows
