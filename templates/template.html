@@ -15,9 +15,13 @@
         padding: 5px;
       }
 
-      img {
-        width: 100%;
-        height: 50%;
+      #chart {
+        width: 80%;
+        height: 45%;
+      }
+
+      #caption {
+        width: 15%;
       }
 
       .container {
@@ -34,6 +38,13 @@
         border-top: 1px solid black;
         border-bottom: none;
         margin-bottom: 10px;
+      }
+
+      #middle-hr-line {
+        border-top: 1px solid black;
+        border-bottom: none;
+        margin-top: 10px;
+        margin-bottom: 25px;
       }
 
       #bottom-hr-line {
@@ -127,8 +138,14 @@
       <center>{{ m_table }}</center>
     </div>
 
+    <hr id="middle-hr-line" />
+
+    <div style="text-align: right">
+      <img id="caption" src="../img/caption.png" />
+    </div>
+
     <div>
-      <center><img src="../img/{{plot_path}}" /></center>
+      <center><img id="chart" src="../img/{{plot_path}}" /></center>
     </div>
 
     <hr id="bottom-hr-line" />
