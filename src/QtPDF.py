@@ -54,7 +54,12 @@ class QtReport:
 
         x_ticks = []
 
-        for i in range(0,self.df.shape[0],5):
+        if self.df.shape[0] <= 90:
+            tick_dist = 5
+        else:
+            tick_dist = int(self.df.shape[0]/15)
+
+        for i in range(0,self.df.shape[0],tick_dist):
             x_ticks.append(i)
         
         colors = []
@@ -71,7 +76,6 @@ class QtReport:
             else:
                 color.append('grey')
             
-
         plt.xticks(ticks=x_ticks)
         plt.xlabel('Light ID')
         plt.ylabel('Average Candela (in cd)')
