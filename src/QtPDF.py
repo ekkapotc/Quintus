@@ -132,7 +132,25 @@ class QtReport:
         QtUtils.displayInfo('{0} was made...'.format(new_PDF_path))
 
     def __mergePDFs(self):
-        pass
+
+        input_dir = self.config['Locations']['templocation']
+        output_dir = self.config['Locations']['reportlocation']
+
+        merge_list = []
+
+        for file in os.listdir(input_dir):
+            if file.endswith('.pdf') and file.startswith(self.reportFileName):
+                merge_list.append(input_dir+os.sep+file)
+
+        sorted(merge_list)
+
+        merger = PyPDF2.PdfFileMerger()
+
+        for pdf in merge_list:
+            merger.append(pdf)
+
+        merger.write(output_dir+os.sep+'{0}.pdf'.format(self.reportFileName)) 
+        merger.close()
 
     def generate( self ):
         #config = configparser.ConfigParser()
@@ -160,6 +178,9 @@ class QtReport:
 
             row = end_row+1
             page_num += 1
+        
+        #Merge PDFs
+        self.__mergePDFs()
 
 #Test the module
 if __name__ == '__main__':
