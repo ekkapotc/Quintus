@@ -2,6 +2,7 @@ import os
 import math
 import configparser
 import PyPDF2
+import datetime
 import pandas as pd
 from weasyprint import HTML,CSS
 from weasyprint.fonts import FontConfiguration
@@ -12,33 +13,21 @@ import QtConfigure
 
 class QtReport:
 
-    def __init__( self , csv_file , * , report_file_name , airport_name ,way_name , agent_name , date_of_report , time_of_report ):
+    def __init__(self , df):
         #Configure the underlying settings
         QtConfigure.QtConfig()
         self.config = configparser.ConfigParser();
-        self.config.read("config.ini")
+        self.config.read("QtConfig.ini")
         
         #Configure the DLL searc path the weasyprint module depends on 
         QtUtils.setDLLSearchPath()
 
-        #Initialize report's parameters
-        self.reportFileName = report_file_name
-        self.airportName = airport_name
-        self.wayName = way_name
-        self.agentName = agent_name
-        self.dateOfReport = date_of_report
-        self.timeOfReport = time_of_report
-
         #Initialze a list for keeping track of the individual pdf files generated 
         self.pdfNames = []
-
-        #Construct dataframe    
-        self.df = pd.read_csv(csv_file)
-
+        #Store dataframe
+        self.df = df;
+        #Transform dataframe
         self.__transformDF()
-
-        #config = configparser.ConfigParser()
-        #config.read('config.ini')
 
     def __plot(self):
 
@@ -65,13 +54,13 @@ class QtReport:
         colors = []
 
         for i, row in self.df.iterrows():
-            if row['Color'] == 'R':
+            if row['C'] == 'R':
                 colors.append('red')
-            elif row['Color'] == 'Y':
+            elif row['C'] == 'Y':
                 colors.append('orange')
-            elif row['Color'] == 'W':
+            elif row['C'] == 'W':
                 colors.append('yellow')
-            elif row['Color'] == 'G':
+            elif row['C'] == 'G':
                 colors.append('green')
             else:
                 color.append('grey')
@@ -82,36 +71,40 @@ class QtReport:
 
         bars = plt.bar( light_ids , avgs , color=colors )
 
-      
-        plot_path = os.path.join( self.config['Locations']['imagelocation'] , '{0}.png'.format(self.reportFileName) )
+        #Hardcode report name
+        plot_path = os.path.join( self.config['Locations']['imagelocation'] , '{0}.png'.format('07000178.pac') )
         
         #save the plot
         plt.savefig( plot_path , dpi=400 )
 
     def __transformDF(self):
 
-       #Initialize values for new three columns
-       data = [0 for i in range(self.df.shape[0])]
+        #Extract 'Airport' and 'Way Name' assuming all the rows are of the same airport and wayname.
+        self.airportName = self.df.loc[1,'Airport']
+        self.wayName = self.df.loc[1,'Way Name']
 
-       #Insert three new columns 'AVG(cd)', 'Max(cd)' and '%ICAO'
-       self.df.insert(1, 'AVG(cd)', data)
-       self.df.insert(2, 'Max(cd)', data)
-       self.df.insert(3, '%ICAO',data)
+        #Initialize values for new three columns
+        data = [0 for i in range(self.df.shape[0])]
 
-       #Drop column 'Timestamp'
-       self.df.drop('Timestamp', inplace=True, axis=1) 
+        #Insert three new columns 'AVG(cd)', 'Max(cd)' and '%ICAO'
+        self.df.insert(1, 'AVG(cd)', data)
+        self.df.insert(2, 'Max(cd)', data)
+        self.df.insert(3, '%ICAO',data)
 
-       #Compute the average and max across the Vs columns for each row
-       self.df['AVG(cd)'] = self.df[['V1', 'V2','V3','V4','V5','V6','V7','V8']].mean(axis=1)
-       self.df['Max(cd)'] = self.df[['V1', 'V2','V3','V4','V5','V6','V7','V8']].max(axis=1)
+        #Drop columns 'Timestamp' , 'Airport' and 'Way Name'
+        self.df.drop(['Timestamp','Airport','Way Name'], inplace=True, axis=1) 
+      
+        #Compute the average and max across the Vs columns for each row
+        self.df['AVG(cd)'] = self.df[['v1', 'v2','v3','v4','v5','v6','v7','v8']].mean(axis=1)
+        self.df['Max(cd)'] = self.df[['v1', 'v2','v3','v4','v5','v6','v7','v8']].max(axis=1)
 
-       #Calculare %ICAO : TO-DO
+        #Calculare %ICAO : TO-DO
 
-       #Drop the Vs columns
-       self.df.drop(['V1', 'V2','V3','V4','V5','V6','V7','V8'], inplace=True, axis=1) 
+        #Drop columns 'v1','v2',...,'v8'
+        self.df.drop(['v1', 'v2','v3','v4','v5','v6','v7','v8'], inplace=True, axis=1) 
 
-       #Plot the barchart
-       self.__plot()
+        #Plot the barchart
+        self.__plot()
 
     def __generateOnePDF( self , page_num , start_row , end_row ):
 
@@ -119,36 +112,41 @@ class QtReport:
         cur_df = self.df.iloc[start_row:end_row+1] #end_row exclusive
         m_table = cur_df.to_html(index=False) 
 
+        datetime_of_report = datetime.datetime.today()
+
         #Render each page 
         each_page =  self.template.render(
                                     m_table=m_table,
                                     page_no=page_num, 
-                                    report_file_name=self.reportFileName,
+                                    report_file_name='07000178.pac',  #Hardcode report name
                                     air_port_name=self.airportName,
                                     way_name=self.wayName,
-                                    agent_name=self.agentName,
-                                    date_of_report=self.dateOfReport,
-                                    time_of_report=self.timeOfReport,
-                                    plot_path='{0}.png'.format(self.reportFileName)
+                                    agent_name='FBT_Sp',   #Hardcode agent name
+                                    date_of_report=QtUtils.getDate(datetime_of_report),
+                                    time_of_report=QtUtils.getTime(datetime_of_report),
+                                    plot_path='{0}.png'.format('07000178.pac')   #Hardcode report name
                                 )
         
-        self.pdfNames.append('{0}-{1}.pdf'.format(self.reportFileName,page_num))
+        #Hardcode report name
+        self.pdfNames.append('{0}-{1}.pdf'.format('07000178.pac',page_num))
 
         #Compute the name of the current HTML
-        new_HTML_path = os.path.join( self.config['Locations']['templocation'] , '{0}-{1}.html'.format(self.reportFileName,page_num) )
+        new_HTML_path = os.path.join( self.config['Locations']['templocation'] , '{0}-{1}.html'.format('07000178.pac',page_num) ) #Hardcode report name
         
         with open( new_HTML_path , "w" ) as html_file: 
             html_file.write(each_page)
 
         QtUtils.displayInfo('{0} was made...'.format(new_HTML_path))
 
-        self.__onePDF(html_page=each_page,report_file_name=self.reportFileName,page_num=page_num)
+        #Hardcode report name
+        self.__onePDF(html_page=each_page,report_file_name='07000178.pac',page_num=page_num)
 
     def __onePDF(self,*,html_page,report_file_name,page_num):
       
         new_PDF_path = os.path.join( self.config['Locations']['templocation'] , '{0}-{1}.pdf'.format(report_file_name,page_num) )
 
-        HTML(string=html_page,base_url='.').write_pdf( new_PDF_path ) 
+        #Set base url to img folder
+        HTML(string=html_page,base_url='img').write_pdf( new_PDF_path ) 
 
         QtUtils.displayInfo('{0} was made...'.format(new_PDF_path))
 
@@ -170,12 +168,11 @@ class QtReport:
         for pdf in merge_list:
             merger.append(pdf)
 
-        merger.write(output_dir+os.sep+'{0}.pdf'.format(self.reportFileName)) 
+        #Hardcode report name
+        merger.write(output_dir+os.sep+'{0}.pdf'.format('07000178.pac')) 
         merger.close()
 
     def generate( self ):
-        #config = configparser.ConfigParser()
-        #config.read('config.ini')
 
         file_loader = FileSystemLoader(self.config['Locations']['templatelocation']) 
         env = Environment(loader=file_loader,trim_blocks=True)
@@ -206,18 +203,7 @@ class QtReport:
 #Test the module
 if __name__ == '__main__':
 
-    import datetime
-    
-    datetime_of_report = datetime.datetime.today()
-
-    headerData = {  
-                    'report_file_name':'07000178.pac',
-                    'airport_name':'Betong International Airport',
-                    'way_name':'RUNWAY EDGE - 07L',
-                    'agent_name':'FBT_Sp',
-                    'date_of_report': QtUtils.getDate(datetime_of_report),
-                    'time_of_report': QtUtils.getTime(datetime_of_report)
-                 }
-
-    report = QtReport( 'C:\Workspace\Quintus\data\m_data.csv' , **headerData )
+    df = pd.read_csv('../data/m_data.csv')
+    report = QtReport(df)
     report.generate()
+    

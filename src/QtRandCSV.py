@@ -12,7 +12,7 @@ records = int(input('Enter the number of records to generate: '))
 
 print('Generating {0} records...\n'.format(records))
 
-columns =('LightID','Timestamp','V1','V2','V3','V4','V5','V6','V7','V8','Distance','Color','Result')
+columns =('Timestamp','Airport','Way Name','Light ID','v1','v2','v3','v4','v5','v6','v7','v8','Distance','C','S')
 
 possible_colors   =['G', 'W', 'R', 'Y']
 possible_outcomes =['Pass', 'Fail']
@@ -30,9 +30,13 @@ v8s = []
 distances = []
 colors = []
 outcomes = []
+airports = []
+waynames = []
 
 #randomly generate records
 for i in range(0, records):
+    airports.append('BETONG INTERNATIONAL AIRPORT')
+    waynames.append('RUNWAY EDGE - 07L')
     lightids.append(i+1)
     timestamps.append(random_date()) 
     v1s.append(random.uniform(8,22))
@@ -48,19 +52,21 @@ for i in range(0, records):
     outcomes.append(np.random.choice(possible_outcomes,p=[0.95,0.05]))
 
 #assemble columns 
-data = {    columns[0]:lightids,
-            columns[1]:timestamps,
-            columns[2]:v1s,
-            columns[3]:v2s,
-            columns[4]:v3s,
-            columns[5]:v4s,
-            columns[6]:v5s,
-            columns[7]:v6s,
-            columns[8]:v7s,
-            columns[9]:v8s,
-            columns[10]:distances,
-            columns[11]:colors,
-            columns[12]:outcomes
+data = {    columns[0]:timestamps,
+            columns[1]:airports,
+            columns[2]:waynames,
+            columns[3]:lightids,
+            columns[4]:v1s,
+            columns[5]:v2s,
+            columns[6]:v3s,
+            columns[7]:v4s,
+            columns[8]:v5s,
+            columns[9]:v6s,
+            columns[10]:v7s,
+            columns[11]:v8s,
+            columns[12]:distances,
+            columns[13]:colors,
+            columns[14]:outcomes
        }
 
 #construct data frame
@@ -68,7 +74,7 @@ df = pd.DataFrame(data,columns=columns)
 pd.options.display.max_rows = records
 
 #set 'LightID' as index
-df.set_index(['LightID'],inplace=True)
+df.set_index(['Light ID'],inplace=True)
 
 #save data frame tp .csv file
-df.to_csv('../data/m_data.csv',float_format='%.2f')
+df.to_csv('data/m_data.csv',float_format='%.2f')

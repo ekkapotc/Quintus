@@ -4,9 +4,6 @@ import QtUtils
 
 class QtConfig:
 
-    __SUCCESS = 1           #TO-DO
-    __FAILURE = (1 << 2)    #TO-DO  
-
     __directories = {
                         'img':'img',
                         'data':'data',
@@ -22,7 +19,7 @@ class QtConfig:
         self.fileName  = pathComponents.pop()
         self.curFolder = pathComponents.pop()
         self.rootPath = pathComponents
-
+        
         for directory in QtConfig.__directories:
             #Compute target directory
             target = os.path.join(QtUtils.getPath(self.rootPath),directory)
@@ -36,8 +33,8 @@ class QtConfig:
     def __createConfigFile(self):
         #Get path components of the current path
         self.__initPaths()
-        #Create a config.ini file if one does not exist
-        if not os.path.exists('config.ini'):
+        #Create a QtConfig.ini file if one does not exist
+        if not os.path.exists('QtConfig.ini'):
             #Instantiate a config parser
             config = configparser.ConfigParser()
             #Intialize key paths
@@ -48,23 +45,29 @@ class QtConfig:
             template_folder = os.path.join(QtUtils.getPath(self.rootPath), QtConfig.__directories['templates'])
 
             #Define sections in the config file
-            config['Locations'] = {'imageLocation': img_folder,
-                             'dataLocation':  data_folder,
-                             'tempLocation':  tmp_folder,
-                             'reportLocation': report_folder,
-                             'templateLocation': template_folder,
+            config['Locations'] = {
+                                'imageLocation': img_folder,
+                                'dataLocation':  data_folder,
+                                'tempLocation':  tmp_folder,
+                                'reportLocation': report_folder,
+                                'templateLocation': template_folder,
                             }
             config['DataFrame']    = {'indexColumn':'LightID'}
             config['ReportFormat'] = {'numberOfRowsPerPage':15}
 
-            with open('config.ini', 'w') as config_file:
+            with open('QtConfig.ini', 'w') as config_file:
                 config.write(config_file)
 
-            QtUtils.displayInfo('config.ini was made...')
+            QtUtils.displayInfo('QtConfig.ini was made...')
         else:
-            QtUtils.displayInfo('config.ini already exists so nothing was done...')
+            QtUtils.displayInfo('QtConfig.ini already exists so nothing was done...')
 
     def __init__(self):
         #Initialize config file
         self.__createConfigFile()
+
+#Test QtConfig 
+if __name__ == '__main__':
+    
+    QtConfig()
         
