@@ -83,10 +83,6 @@ class QtReport:
 
     def __transformDF(self):
 
-        #Extract 'Airport' and 'Way Name' assuming all the rows are of the same airport and wayname.
-        self.airportName = self.df.loc[1,'Airport']
-        self.wayName = self.df.loc[1,'Way Name']
-
         #Initialize values for new three columns
         data = [0 for i in range(self.df.shape[0])]
 
