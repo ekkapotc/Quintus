@@ -77,4 +77,5 @@ pd.options.display.max_rows = records
 df.set_index(['Light ID'],inplace=True)
 
 #save data frame tp .csv file
-df.to_csv('data/m_data.csv',float_format='%.2f')
+#note this code works only when the python script QtRandCSV.py is called from this folder.
+df.to_csv('../data/m_data.csv',float_format='%.2f')
