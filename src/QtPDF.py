@@ -13,11 +13,16 @@ import QtConfigure
 
 class QtReport:
 
-    def __init__(self , df):
+    def __init__(self , df , * , report_file_name , agent_name , airport_name , way_name ):
         #Configure the underlying settings
         QtConfigure.QtConfig()
         self.config = configparser.ConfigParser();
         self.config.read("QtConfig.ini")
+        
+        self.reportFileName = report_file_name
+        self.agentName = agent_name
+        self.airportName = airport_name
+        self.wayName = way_name
         
         #Configure the DLL searc path the weasyprint module depends on 
         QtUtils.setDLLSearchPath()
@@ -71,8 +76,7 @@ class QtReport:
 
         bars = plt.bar( light_ids , avgs , color=colors )
 
-        #Hardcode report name
-        plot_path = os.path.join( self.config['Locations']['imagelocation'] , '{0}.png'.format('07000178.pac') )
+        plot_path = os.path.join( self.config['Locations']['imagelocation'] , '{0}.png'.format(self.reportFileName))
         
         #save the plot
         plt.savefig( plot_path , dpi=400 )
@@ -118,28 +122,26 @@ class QtReport:
         each_page =  self.template.render(
                                     m_table=m_table,
                                     page_no=page_num, 
-                                    report_file_name='07000178.pac',  #Hardcode report name
+                                    report_file_name=self.reportFileName,  
                                     air_port_name=self.airportName,
                                     way_name=self.wayName,
-                                    agent_name='FBT_Sp',   #Hardcode agent name
+                                    agent_name=self.agentName,  
                                     date_of_report=QtUtils.getDate(datetime_of_report),
                                     time_of_report=QtUtils.getTime(datetime_of_report),
-                                    plot_path='{0}.png'.format('07000178.pac')   #Hardcode report name
+                                    plot_path='{0}.png'.format(self.reportFileName)   
                                 )
         
-        #Hardcode report name
-        self.pdfNames.append('{0}-{1}.pdf'.format('07000178.pac',page_num))
+        self.pdfNames.append('{0}-{1}.pdf'.format(self.reportFileName,page_num))
 
         #Compute the name of the current HTML
-        new_HTML_path = os.path.join( self.config['Locations']['templocation'] , '{0}-{1}.html'.format('07000178.pac',page_num) ) #Hardcode report name
+        new_HTML_path = os.path.join( self.config['Locations']['templocation'] , '{0}-{1}.html'.format(self.reportFileName,page_num) ) 
         
         with open( new_HTML_path , "w" ) as html_file: 
             html_file.write(each_page)
 
         QtUtils.displayInfo('{0} was made...'.format(new_HTML_path))
 
-        #Hardcode report name
-        self.__onePDF(html_page=each_page,report_file_name='07000178.pac',page_num=page_num)
+        self.__onePDF(html_page=each_page,report_file_name=self.reportFileName,page_num=page_num)
 
     def __onePDF(self,*,html_page,report_file_name,page_num):
       
@@ -168,8 +170,7 @@ class QtReport:
         for pdf in merge_list:
             merger.append(pdf)
 
-        #Hardcode report name
-        merger.write(output_dir+os.sep+'{0}.pdf'.format('07000178.pac')) 
+        merger.write(output_dir+os.sep+'{0}.pdf'.format(self.reportFileName)) 
         merger.close()
 
     def generate( self ):
@@ -203,7 +204,14 @@ class QtReport:
 #Test the module
 if __name__ == '__main__':
 
+    headerData = {  
+                    'report_file_name':'07000178.pac',
+                    'airport_name':'Betong International Airport',
+                    'way_name':'RUNWAY EDGE - 07L',
+                    'agent_name':'FBT_Sp'
+                 }
+
     df = pd.read_csv('../data/m_data.csv')
-    report = QtReport(df)
+    report = QtReport(df,**headerData)
     report.generate()
     

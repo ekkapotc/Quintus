@@ -15,9 +15,13 @@
         padding: 5px;
       }
 
-      img {
-        width: 100%;
-        height: 50%;
+      #chart {
+        width: 80%;
+        height: 45%;
+      }
+
+      #caption {
+        width: 15%;
       }
 
       .container {
@@ -34,6 +38,13 @@
         border-top: 1px solid black;
         border-bottom: none;
         margin-bottom: 10px;
+      }
+
+      #middle-hr-line {
+        border-top: 1px solid black;
+        border-bottom: none;
+        margin-top: 10px;
+        margin-bottom: 25px;
       }
 
       #bottom-hr-line {
@@ -87,7 +98,7 @@
   </head>
   <body>
     <div>
-      <h1 id="airport-name"><center>Betong International Airport</center></h1>
+      <h1 id="airport-name"><center>BETONG INTERNATIONAL AIRPORT</center></h1>
     </div>
     <div>
       <p>
@@ -98,11 +109,11 @@
           <span class="span"
             >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
           >
-          <span class="span"><b>Date of Report:</b> 29/04/2021 </span>
+          <span class="span"><b>Date of Report:</b> 09/05/2021 </span>
           <span class="span"
             >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
           >
-          <span class="span"><b>Time of Report:</b> 12:35:00</span>
+          <span class="span"><b>Time of Report:</b> 14:55:45</span>
         </center>
       </p>
 
@@ -127,164 +138,170 @@
       <center><table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
-      <th>LightID</th>
+      <th>Light ID</th>
       <th>AVG(cd)</th>
       <th>Max(cd)</th>
       <th>%ICAO</th>
       <th>Distance</th>
-      <th>Color</th>
-      <th>Result</th>
+      <th>C</th>
+      <th>S</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>1</td>
-      <td>13.56000</td>
-      <td>21.75</td>
+      <td>14.91750</td>
+      <td>20.81</td>
       <td>0</td>
-      <td>0.68</td>
-      <td>R</td>
-      <td>Pass</td>
+      <td>0.78</td>
+      <td>Y</td>
+      <td>Fail</td>
     </tr>
     <tr>
       <td>2</td>
-      <td>16.02625</td>
-      <td>20.53</td>
+      <td>14.24375</td>
+      <td>19.70</td>
       <td>0</td>
-      <td>1.58</td>
+      <td>1.70</td>
       <td>Y</td>
       <td>Pass</td>
     </tr>
     <tr>
       <td>3</td>
-      <td>14.66125</td>
-      <td>20.58</td>
+      <td>17.37750</td>
+      <td>21.93</td>
       <td>0</td>
-      <td>1.70</td>
-      <td>R</td>
-      <td>Pass</td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>16.29250</td>
-      <td>21.98</td>
-      <td>0</td>
-      <td>0.96</td>
-      <td>W</td>
-      <td>Pass</td>
-    </tr>
-    <tr>
-      <td>5</td>
-      <td>15.43875</td>
-      <td>21.13</td>
-      <td>0</td>
-      <td>1.08</td>
+      <td>0.51</td>
       <td>G</td>
       <td>Pass</td>
     </tr>
     <tr>
-      <td>6</td>
-      <td>14.85125</td>
-      <td>21.60</td>
+      <td>4</td>
+      <td>17.31125</td>
+      <td>21.04</td>
       <td>0</td>
-      <td>0.70</td>
-      <td>R</td>
-      <td>Fail</td>
+      <td>1.51</td>
+      <td>Y</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>16.09625</td>
+      <td>20.16</td>
+      <td>0</td>
+      <td>0.62</td>
+      <td>W</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>14.08375</td>
+      <td>21.15</td>
+      <td>0</td>
+      <td>0.98</td>
+      <td>G</td>
+      <td>Pass</td>
     </tr>
     <tr>
       <td>7</td>
-      <td>14.07000</td>
-      <td>18.93</td>
+      <td>14.68125</td>
+      <td>19.36</td>
       <td>0</td>
-      <td>1.57</td>
-      <td>R</td>
+      <td>0.86</td>
+      <td>G</td>
       <td>Pass</td>
     </tr>
     <tr>
       <td>8</td>
-      <td>16.70250</td>
-      <td>21.22</td>
+      <td>14.41250</td>
+      <td>21.67</td>
       <td>0</td>
-      <td>1.77</td>
-      <td>R</td>
+      <td>1.64</td>
+      <td>Y</td>
       <td>Pass</td>
     </tr>
     <tr>
       <td>9</td>
-      <td>14.92625</td>
-      <td>21.21</td>
+      <td>17.45750</td>
+      <td>21.47</td>
       <td>0</td>
-      <td>1.39</td>
-      <td>Y</td>
+      <td>0.92</td>
+      <td>G</td>
       <td>Pass</td>
     </tr>
     <tr>
       <td>10</td>
-      <td>13.51000</td>
-      <td>18.26</td>
+      <td>13.88625</td>
+      <td>19.13</td>
       <td>0</td>
-      <td>1.15</td>
-      <td>Y</td>
+      <td>1.28</td>
+      <td>W</td>
       <td>Pass</td>
     </tr>
     <tr>
       <td>11</td>
-      <td>15.93500</td>
-      <td>20.94</td>
+      <td>15.38000</td>
+      <td>20.00</td>
       <td>0</td>
-      <td>0.70</td>
+      <td>1.31</td>
       <td>W</td>
       <td>Pass</td>
     </tr>
     <tr>
       <td>12</td>
-      <td>16.03625</td>
-      <td>21.10</td>
+      <td>12.97125</td>
+      <td>18.42</td>
       <td>0</td>
-      <td>1.80</td>
-      <td>G</td>
+      <td>1.42</td>
+      <td>Y</td>
       <td>Pass</td>
     </tr>
     <tr>
       <td>13</td>
-      <td>16.04250</td>
-      <td>21.62</td>
+      <td>14.57375</td>
+      <td>21.12</td>
       <td>0</td>
-      <td>1.36</td>
-      <td>R</td>
+      <td>0.95</td>
+      <td>Y</td>
       <td>Pass</td>
     </tr>
     <tr>
       <td>14</td>
-      <td>15.22875</td>
-      <td>21.55</td>
+      <td>11.62625</td>
+      <td>15.16</td>
       <td>0</td>
-      <td>1.71</td>
+      <td>1.48</td>
       <td>W</td>
       <td>Pass</td>
     </tr>
     <tr>
       <td>15</td>
-      <td>13.28625</td>
-      <td>18.70</td>
+      <td>13.89625</td>
+      <td>21.95</td>
       <td>0</td>
-      <td>0.91</td>
-      <td>Y</td>
+      <td>1.64</td>
+      <td>G</td>
       <td>Pass</td>
     </tr>
   </tbody>
 </table></center>
     </div>
 
+    <hr id="middle-hr-line" />
+
+    <div style="text-align: right">
+      <img id="caption" src="../img/caption.png" />
+    </div>
+
     <div>
-      <center><img src="../img/07000178.pac.png" /></center>
+      <center><img id="chart" src="../img/07000178.pac.png" /></center>
     </div>
 
     <hr id="bottom-hr-line" />
 
     <div>
       <p style="text-align: left">
-        <b>Date of Report:</b> 29/04/2021
+        <b>Date of Report:</b> 09/05/2021
         <span style="float: right"><b>Page:</b> 1</span>
       </p>
     </div>
