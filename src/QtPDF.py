@@ -196,18 +196,4 @@ class QtReport:
         
         #Merge PDFs
         self.__mergePDFs()
-
-#Test the module
-if __name__ == '__main__':
-
-    headerData = {  
-                    'report_file_name':'07000178.pac',
-                    'airport_name':'Betong International Airport',
-                    'way_name':'RUNWAY EDGE - 07L',
-                    'agent_name':'FBT_Sp'
-                 }
-
-    df = pd.read_csv('../data/m_data.csv')
-    report = QtReport(df,**headerData)
-    report.generate()
     
