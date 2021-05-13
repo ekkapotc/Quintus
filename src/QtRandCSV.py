@@ -15,7 +15,7 @@ print('Generating {0} records...\n'.format(records))
 columns =('Timestamp','Airport','Way Name','Light ID','v1','v2','v3','v4','v5','v6','v7','v8','Distance','C','S')
 
 possible_colors   =['G', 'W', 'R', 'Y']
-possible_outcomes =['Pass', 'Fail']
+possible_outcomes =[u'\u2713', u'\u2717']
 
 timestamps = []
 lightids   = []
@@ -49,7 +49,7 @@ for i in range(0, records):
     v8s.append(random.uniform(8,22))
     distances.append(random.uniform(0.50,1.80))
     colors.append(np.random.choice(possible_colors,p=[0.25,0.25,0.25,0.25]))
-    outcomes.append(np.random.choice(possible_outcomes,p=[0.95,0.05]))
+    outcomes.append(np.random.choice(possible_outcomes,p=[0.55,0.45]))
 
 #assemble columns 
 data = {    columns[0]:timestamps,

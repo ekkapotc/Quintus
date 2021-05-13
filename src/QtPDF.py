@@ -132,7 +132,7 @@ class QtReport:
         #Compute the name of the current HTML
         new_HTML_path = os.path.join( self.config['Locations']['templocation'] , '{0}-{1}.html'.format(self.reportFileName,page_num) ) 
         
-        with open( new_HTML_path , "w" ) as html_file: 
+        with open( new_HTML_path , "w" , encoding="utf-8") as html_file: 
             html_file.write(each_page)
 
         QtUtils.displayInfo('{0} was made...'.format(new_HTML_path))
