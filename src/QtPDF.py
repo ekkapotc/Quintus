@@ -34,55 +34,6 @@ class QtReport:
         #Transform dataframe
         self.__transformDF()
 
-    def __plot(self):
-
-        light_ids = []
-
-        for i in range(self.df.shape[0]):
-            light_ids.append(i+1)
-
-        avgs = []
-
-        for _, row in self.df.iterrows():
-            avgs.append(row['AVG(cd)'])
-
-        x_ticks = []
-
-        if self.df.shape[0] <= 90:
-            tick_dist = 5
-        else:
-            tick_dist = int(self.df.shape[0]/15)
-
-        for i in range(0,self.df.shape[0],tick_dist):
-            x_ticks.append(i)
-        
-        colors = []
-
-        for i, row in self.df.iterrows():
-            if row['C'] == 'R':
-                colors.append('red')
-            elif row['C'] == 'Y':
-                colors.append('orange')
-            elif row['C'] == 'W':
-                colors.append('yellow')
-            elif row['C'] == 'G':
-                colors.append('green')
-            else:
-                color.append('grey')
-            
-        plt.xticks(ticks=x_ticks)
-        plt.xlabel('Light ID')
-        plt.ylabel('Average Candela (in cd)')
-
-        bars = plt.bar( light_ids , avgs , color=colors )
-
-        plot_path = os.path.join( self.config['Locations']['imagelocation'] , '{0}.png'.format(self.reportFileName))
-        
-        #save the plot
-        plt.savefig( plot_path , dpi=400 )
-
-        plt.close()
-
     def __transformDF(self):
 
         #Initialize values for new three columns
@@ -104,9 +55,6 @@ class QtReport:
 
         #Drop columns 'v1','v2',...,'v8'
         self.df.drop(['v1', 'v2','v3','v4','v5','v6','v7','v8'], inplace=True, axis=1) 
-
-        #Plot the barchart
-        #self.__plot()
 
     def __draw(self , cur_df , page_num , start_row , end_row ):
         
@@ -143,17 +91,27 @@ class QtReport:
             for i in range(light_ids[-1]+1,light_ids[-1]+diff+1):
                 light_ids.append(i)
                 avgs.append(0.0)
-            
+
+        #Set outer background color
+        plt.figure(facecolor='grey')
+        
+        #Set inner background color
+        plt.axes().set_facecolor('grey')
+
         plt.xticks(xticks)
         plt.xlabel('Light ID')
         plt.ylabel('Average Candela (Cd)')
 
-        plt.bar( x=light_ids , height=avgs , width=0.50, color=colors )
+      
+        plt.bar( x=light_ids , height=avgs , width=0.50, color=colors  )
 
         plot_path = os.path.join( self.config['Locations']['imagelocation'] , '{0}-{1}.png'.format(self.reportFileName,page_num))
-        
+
+        #ax = plt.axes()
+        #ax.set_facecolor('gray')
+
         #save the plot
-        plt.savefig( plot_path , dpi=400 )
+        plt.savefig( plot_path , dpi=400  )
         plt.close()
 
     def __generateOnePDF( self , page_num , start_row , end_row ):
@@ -164,6 +122,7 @@ class QtReport:
         print('Page {} : start light id {} -> end light id {}'.format(page_num,start_row+1 , end_row+1))
         print(cur_df.to_string())
 
+        #Draw a bar chart
         self.__draw(cur_df, page_num,start_row,end_row)
 
         m_table = cur_df.to_html(index=False) 
