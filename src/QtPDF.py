@@ -102,7 +102,7 @@ class QtReport:
         for icao in icaos:
             if idx < cur_df.shape[0]:
                 if icao < 50.0:
-                    red_bars.append(avgs[idx]+1.0)
+                    red_bars.append(avgs[idx]+500)
                 else:
                     red_bars.append(0.0)
             else:
