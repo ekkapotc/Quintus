@@ -107,9 +107,6 @@ class QtReport:
 
         plot_path = os.path.join( self.config['Locations']['imagelocation'] , '{0}-{1}.png'.format(self.reportFileName,page_num))
 
-        #ax = plt.axes()
-        #ax.set_facecolor('gray')
-
         #save the plot
         plt.savefig( plot_path , dpi=400  )
         plt.close()
