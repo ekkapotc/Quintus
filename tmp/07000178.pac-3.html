@@ -15,9 +15,13 @@
         padding: 5px;
       }
 
-      img {
-        width: 100%;
-        height: 50%;
+      #chart {
+        width: 75%;
+        height: 45%;
+      }
+
+      #caption {
+        width: 15%;
       }
 
       .container {
@@ -34,6 +38,13 @@
         border-top: 1px solid black;
         border-bottom: none;
         margin-bottom: 10px;
+      }
+
+      #middle-hr-line {
+        border-top: 1px solid black;
+        border-bottom: none;
+        margin-top: 10px;
+        margin-bottom: 25px;
       }
 
       #bottom-hr-line {
@@ -98,11 +109,11 @@
           <span class="span"
             >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
           >
-          <span class="span"><b>Date of Report:</b> 29/04/2021 </span>
+          <span class="span"><b>Date of Report:</b> 24/05/2021 </span>
           <span class="span"
             >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
           >
-          <span class="span"><b>Time of Report:</b> 12:35:00</span>
+          <span class="span"><b>Time of Report:</b> 22:43:33</span>
         </center>
       </p>
 
@@ -127,164 +138,170 @@
       <center><table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
-      <th>LightID</th>
+      <th>Light ID</th>
       <th>AVG(cd)</th>
       <th>Max(cd)</th>
       <th>%ICAO</th>
       <th>Distance</th>
-      <th>Color</th>
-      <th>Result</th>
+      <th>C</th>
+      <th>S</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>31</td>
-      <td>11.82250</td>
-      <td>18.88</td>
-      <td>0</td>
-      <td>0.98</td>
+      <td>14.18625</td>
+      <td>17.18</td>
+      <td>13221.21</td>
+      <td>1.65</td>
       <td>G</td>
-      <td>Pass</td>
+      <td>✓</td>
     </tr>
     <tr>
       <td>32</td>
-      <td>15.12125</td>
-      <td>19.97</td>
-      <td>0</td>
-      <td>0.81</td>
-      <td>W</td>
-      <td>Pass</td>
+      <td>15.88875</td>
+      <td>19.58</td>
+      <td>6407.77</td>
+      <td>1.08</td>
+      <td>Y</td>
+      <td>✗</td>
     </tr>
     <tr>
       <td>33</td>
-      <td>17.44000</td>
-      <td>21.37</td>
-      <td>0</td>
-      <td>0.97</td>
-      <td>Y</td>
-      <td>Pass</td>
+      <td>14.49375</td>
+      <td>19.50</td>
+      <td>14583.17</td>
+      <td>1.73</td>
+      <td>W</td>
+      <td>✗</td>
     </tr>
     <tr>
       <td>34</td>
-      <td>17.64125</td>
-      <td>21.76</td>
-      <td>0</td>
-      <td>0.63</td>
-      <td>W</td>
-      <td>Pass</td>
+      <td>15.44000</td>
+      <td>20.57</td>
+      <td>5166.86</td>
+      <td>1.03</td>
+      <td>G</td>
+      <td>✗</td>
     </tr>
     <tr>
       <td>35</td>
-      <td>12.14250</td>
-      <td>21.69</td>
-      <td>0</td>
+      <td>15.49500</td>
+      <td>19.53</td>
+      <td>9569.01</td>
       <td>1.49</td>
-      <td>G</td>
-      <td>Pass</td>
+      <td>Y</td>
+      <td>✓</td>
     </tr>
     <tr>
       <td>36</td>
-      <td>18.43750</td>
-      <td>21.69</td>
-      <td>0</td>
-      <td>0.94</td>
-      <td>G</td>
-      <td>Pass</td>
+      <td>15.85375</td>
+      <td>20.47</td>
+      <td>9450.07</td>
+      <td>1.21</td>
+      <td>W</td>
+      <td>✗</td>
     </tr>
     <tr>
       <td>37</td>
-      <td>16.18125</td>
-      <td>20.23</td>
-      <td>0</td>
-      <td>1.50</td>
-      <td>G</td>
-      <td>Fail</td>
+      <td>15.78250</td>
+      <td>21.63</td>
+      <td>8965.49</td>
+      <td>1.43</td>
+      <td>W</td>
+      <td>✓</td>
     </tr>
     <tr>
       <td>38</td>
-      <td>14.96500</td>
-      <td>20.67</td>
-      <td>0</td>
-      <td>0.92</td>
-      <td>W</td>
-      <td>Pass</td>
+      <td>12.82625</td>
+      <td>17.37</td>
+      <td>9849.44</td>
+      <td>1.11</td>
+      <td>Y</td>
+      <td>✗</td>
     </tr>
     <tr>
       <td>39</td>
-      <td>17.09375</td>
-      <td>21.66</td>
-      <td>0</td>
-      <td>0.62</td>
+      <td>14.83250</td>
+      <td>19.47</td>
+      <td>10626.72</td>
+      <td>0.75</td>
       <td>W</td>
-      <td>Pass</td>
+      <td>✓</td>
     </tr>
     <tr>
       <td>40</td>
-      <td>16.63500</td>
-      <td>21.34</td>
-      <td>0</td>
-      <td>0.89</td>
-      <td>G</td>
-      <td>Pass</td>
+      <td>13.83750</td>
+      <td>20.55</td>
+      <td>14635.01</td>
+      <td>1.47</td>
+      <td>Y</td>
+      <td>✓</td>
     </tr>
     <tr>
       <td>41</td>
-      <td>13.45000</td>
-      <td>21.17</td>
-      <td>0</td>
-      <td>1.33</td>
-      <td>W</td>
-      <td>Pass</td>
+      <td>14.92375</td>
+      <td>20.20</td>
+      <td>11734.95</td>
+      <td>0.72</td>
+      <td>G</td>
+      <td>✗</td>
     </tr>
     <tr>
       <td>42</td>
-      <td>15.22750</td>
-      <td>21.46</td>
-      <td>0</td>
-      <td>1.41</td>
-      <td>R</td>
-      <td>Pass</td>
+      <td>13.90375</td>
+      <td>21.04</td>
+      <td>11426.34</td>
+      <td>1.27</td>
+      <td>G</td>
+      <td>✗</td>
     </tr>
     <tr>
       <td>43</td>
-      <td>14.49125</td>
-      <td>21.37</td>
-      <td>0</td>
-      <td>1.21</td>
+      <td>16.90625</td>
+      <td>21.93</td>
+      <td>5067.58</td>
+      <td>1.52</td>
       <td>R</td>
-      <td>Pass</td>
+      <td>✗</td>
     </tr>
     <tr>
       <td>44</td>
-      <td>16.14750</td>
-      <td>21.37</td>
-      <td>0</td>
-      <td>1.53</td>
-      <td>G</td>
-      <td>Pass</td>
+      <td>14.45625</td>
+      <td>17.61</td>
+      <td>8762.84</td>
+      <td>1.17</td>
+      <td>R</td>
+      <td>✓</td>
     </tr>
     <tr>
       <td>45</td>
-      <td>15.41875</td>
-      <td>20.58</td>
-      <td>0</td>
-      <td>1.27</td>
+      <td>15.17250</td>
+      <td>21.52</td>
+      <td>5311.08</td>
+      <td>0.69</td>
       <td>G</td>
-      <td>Fail</td>
+      <td>✓</td>
     </tr>
   </tbody>
 </table></center>
     </div>
 
+    <hr id="middle-hr-line" />
+
+    <div style="text-align: right">
+      <img id="caption" src="../img/caption.png" />
+    </div>
+
     <div>
-      <center><img src="../img/07000178.pac.png" /></center>
+      <center><img id="chart" src="../img/07000178.pac-3.png" /></center>
     </div>
 
     <hr id="bottom-hr-line" />
 
     <div>
       <p style="text-align: left">
-        <b>Date of Report:</b> 29/04/2021
+        <b>Date of Report:</b> 24/05/2021
         <span style="float: right"><b>Page:</b> 3</span>
       </p>
     </div>

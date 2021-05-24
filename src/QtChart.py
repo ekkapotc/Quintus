@@ -24,7 +24,7 @@ if __name__ == '__main__':
         elif label_colors[i]=='undefined':
             colors.append('grey')
 
-    handles = [f("s", colors[i]) for i in range(5)]
+    handles = [f("s", colors[i]) for i in range(len(label_colors))]
 
     label_colors
 
