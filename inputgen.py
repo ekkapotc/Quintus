@@ -39,7 +39,7 @@ for i in range(0, records):
     airports.append('BETONG INTERNATIONAL AIRPORT')
     waynames.append('RUNWAY EDGE - 07L')
     lightids.append(i+1)
-    icaos.append(random.uniform(5000,15000))
+    icaos.append(random.uniform(40,200))
     timestamps.append(random_date()) 
     v1s.append(random.uniform(8,22))
     v2s.append(random.uniform(8,22))

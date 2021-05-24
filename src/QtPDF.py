@@ -59,11 +59,14 @@ class QtReport:
     def __draw(self , cur_df , page_num , start_row , end_row ):
         
         light_ids = list(range(start_row+1,end_row+2))
+        #indices = list(range(0,self.num_rows_per_page))
         
         avgs = []
+        icaos = []
 
         for _, row in cur_df.iterrows():
             avgs.append(row['AVG(cd)'])
+            icaos.append(row['%ICAO'])
 
         colors = []
 
@@ -80,9 +83,7 @@ class QtReport:
                 colors.append('grey')
 
         #List light ids as x-ticks on the x-axis
-        print('Last Light ID = ',light_ids[-1])
         xticks = range(light_ids[0],light_ids[-1]+1,2)
-        print('xticks ->',list(xticks))
 
         diff = self.num_rows_per_page - len(light_ids)
 
@@ -91,21 +92,38 @@ class QtReport:
             for i in range(light_ids[-1]+1,light_ids[-1]+diff+1):
                 light_ids.append(i)
                 avgs.append(0.0)
+                icaos.append(0.0)
+
+        width = 0.8;
+
+        red_bars = []
+
+        idx = 0
+        for icao in icaos:
+            if idx < cur_df.shape[0]:
+                if icao < 50.0:
+                    red_bars.append(avgs[idx]+1.0)
+                else:
+                    red_bars.append(0.0)
+            else:
+                red_bars.append(0.0)
+
+            idx = idx+1
 
         #Set outer background color
-        plt.figure(facecolor='grey')
+        plt.figure(facecolor='#9d9d9e')
         
         #Set inner background color
-        plt.axes().set_facecolor('grey')
+        plt.axes().set_facecolor('#9d9d9e')
 
         plt.xticks(xticks)
         plt.xlabel('Light ID')
         plt.ylabel('Average Candela (Cd)')
 
-      
-        plt.bar( x=light_ids , height=avgs , width=0.50, color=colors  )
+        plt.bar( x=light_ids , height=red_bars, width=width, color='#9d9d9e' , edgecolor='red'  )
+        plt.bar( x=light_ids , height=avgs , width=width*.5, color=colors  )
 
-        plot_path = os.path.join( self.config['Locations']['imagelocation'] , '{0}-{1}.png'.format(self.reportFileName,page_num))
+        plot_path = os.path.join( self.config['Locations']['templocation'] , '{0}-{1}.png'.format(self.reportFileName,page_num))
 
         #save the plot
         plt.savefig( plot_path , dpi=400  )
@@ -115,9 +133,6 @@ class QtReport:
 
         #Get the entries for the current page
         cur_df = self.df.iloc[start_row:end_row+1] #end_row exclusive
-
-        print('Page {} : start light id {} -> end light id {}'.format(page_num,start_row+1 , end_row+1))
-        print(cur_df.to_string())
 
         #Draw a bar chart
         self.__draw(cur_df, page_num,start_row,end_row)
@@ -189,15 +204,13 @@ class QtReport:
 
         #Get the total number of entries
         num_of_rows  = self.df.shape[0]
-        #print('Number of rows = {}'.format(num_of_rows))
+    
 
         #Get the number of rows per page
         self.num_rows_per_page = int(self.config['ReportFormat']['numberofrowsperpage'])
-        #print('Number of rows per page = {}'.format(self.num_rows_per_page))
 
         #Calculate the number of pages based on the config where the number of entries per page is set
         num_of_pages = math.ceil(num_of_rows/self.num_rows_per_page)
-        #print('num_of_pages = {}'.format(num_of_pages))
         
         row = 0
         for page_num in range(1,num_of_pages+1):
@@ -207,8 +220,6 @@ class QtReport:
             if end_row > num_of_rows-1:
                 end_row = num_of_rows-1
 
-            print('Page {} : start_row {} -> end_row {}'.format(page_num,start_row,end_row))
-
             #Export the current page as HTML
             self.__generateOnePDF( page_num , start_row , end_row )
 
@@ -217,4 +228,11 @@ class QtReport:
         
         #Merge PDFs
         self.__mergePDFs()
+
+        #Delete temp files
+        dir = self.config['Locations']['templocation']
+        for f in os.listdir(dir):
+            os.remove(os.path.join(dir, f))
+
+      
     
