@@ -94,7 +94,7 @@ class QtReport:
                 avgs.append(0.0)
                 icaos.append(0.0)
 
-        width = 0.8;
+        width = 1.0;
 
         red_bars = []
 
@@ -225,7 +225,6 @@ class QtReport:
 
             row = end_row+1
 
-        
         #Merge PDFs
         self.__mergePDFs()
 

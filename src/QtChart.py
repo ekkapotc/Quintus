@@ -28,8 +28,8 @@ if __name__ == '__main__':
 
     label_colors
 
-    #legend = plt.legend(handles, label_colors, loc=5, framealpha=1, frameon=True , mode='expand',ncol=5 , title="Light Color Caption:")
+    legend = plt.legend(handles, label_colors, loc=5, framealpha=1, frameon=True , mode='expand',ncol=5 , title="Light Color Caption:")
 
-    legend = plt.legend(handles, label_colors, loc=5, framealpha=1, frameon=True , title="Light Color Caption:")
+    #legend = plt.legend(handles, label_colors, loc=5, framealpha=1, frameon=True , title="Light Color Caption:")
 
     exportLegend(legend)
