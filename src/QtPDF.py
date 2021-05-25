@@ -59,8 +59,7 @@ class QtReport:
     def __draw(self , cur_df , page_num , start_row , end_row ):
         
         light_ids = list(range(start_row+1,end_row+2))
-        #indices = list(range(0,self.num_rows_per_page))
-        
+  
         avgs = []
         icaos = []
 
