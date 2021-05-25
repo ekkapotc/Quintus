@@ -61,7 +61,7 @@ class QtReport:
     def __draw(self , cur_df , page_num , start_row , end_row ):
         
         light_ids = list(range(start_row+1,end_row+2))
-        
+
         avgs = []
         icaos = []
 
@@ -200,6 +200,7 @@ class QtReport:
         merger.write(output_dir+os.sep+'{0}.pdf'.format(self.reportFileName)) 
         merger.close()
 
+
     def generate( self ):
 
         file_loader = FileSystemLoader(self.config['Locations']['templatelocation']) 
@@ -233,9 +234,9 @@ class QtReport:
         self.__mergePDFs()
 
         #Delete temp files
-        #dir = self.config['Locations']['templocation']
-        #for f in os.listdir(dir):
-        #    os.remove(os.path.join(dir, f))
+        dir = self.config['Locations']['templocation']
+        for f in os.listdir(dir):
+           os.remove(os.path.join(dir, f))
 
       
     
