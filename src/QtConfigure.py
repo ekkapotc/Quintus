@@ -54,6 +54,7 @@ class QtConfig:
                             }
             config['DataFrame']    = {'indexColumn':'LightID'}
             config['ReportFormat'] = {'numberOfRowsPerPage':15}
+            config['BarChartFormat'] = {'widthOfOneBar':1.0}
 
             with open('QtConfig.ini', 'w') as config_file:
                 config.write(config_file)

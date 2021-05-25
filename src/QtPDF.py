@@ -19,8 +19,13 @@ import QtConfigure
 class QtReport:
 
     def __init__(self , df , * , report_file_name , agent_name , airport_name , way_name ):
+        
+        #Configure the DLL searc path the weasyprint module depends on 
+        QtUtils.setDLLSearchPath()
+
         #Configure the underlying settings
         QtConfigure.QtConfig()
+
         self.config = configparser.ConfigParser();
         self.config.read("QtConfig.ini")
         
@@ -29,13 +34,10 @@ class QtReport:
         self.airportName = airport_name
         self.wayName = way_name
         
-        #Configure the DLL searc path the weasyprint module depends on 
-        QtUtils.setDLLSearchPath()
-
         #Initialze a list for keeping track of the individual pdf files generated 
         self.pdfNames = []
         #Store dataframe
-        self.df = df;
+        self.df = df
         #Transform dataframe
         self.__transformDF()
 
@@ -62,12 +64,12 @@ class QtReport:
         
         light_ids = list(range(start_row+1,end_row+2))
 
-        avgs = []
-        icaos = []
+        averages = []
+        ICAOs = []
 
-        for _, row in cur_df.iterrows():
-            avgs.append(row['AVG(cd)'])
-            icaos.append(row['%ICAO'])
+        for _ , row in cur_df.iterrows():
+            averages.append(row['AVG(cd)'])
+            ICAOs.append(row['%ICAO'])
 
         colors = []
 
@@ -92,24 +94,30 @@ class QtReport:
         if diff > 0:
             for i in range(light_ids[-1]+1,light_ids[-1]+diff+1):
                 light_ids.append(i)
-                avgs.append(0.0)
-                icaos.append(0.0)
+                averages.append(0.0)
+                ICAOs.append(0.0)
 
-        width = 1.0;
+        redbars = []
+        edgecolors = []
+        linewidths = []
 
-        red_bars = []
-
-        idx = 0
-        for icao in icaos:
-            if idx < cur_df.shape[0]:
-                if icao < 50.0:
-                    red_bars.append(avgs[idx]+500)
+        row = 0
+        for val in ICAOs:
+            if row < cur_df.shape[0]:
+                if val < 50.0:
+                    redbars.append(averages[row]+500)
+                    edgecolors.append('red')
+                    linewidths.append(1.0)
                 else:
-                    red_bars.append(0.0)
+                    redbars.append(0.0)
+                    edgecolors.append('white')
+                    linewidths.append(0.0)
             else:
-                red_bars.append(0.0)
-                
-            idx = idx+1
+                redbars.append(0.0)  
+                edgecolors.append('white')
+                linewidths.append(0.0)
+
+            row = row+1
 
         #Set outer background color
         plt.figure(facecolor='#9d9d9e')
@@ -124,8 +132,10 @@ class QtReport:
         plt.xlabel('Light ID')
         plt.ylabel('Average Candela (Cd)')
 
-        plt.bar( x=light_ids , height=red_bars, width=width, color='#9d9d9e' , edgecolor='red'  )
-        plt.bar( x=light_ids , height=avgs , width=width*.5, color=colors  )
+        width = float(self.config['BarChartFormat']['widthofonebar'])
+        
+        plt.bar( x=light_ids , height=redbars , width=width, color='#9d9d9e' , edgecolor=edgecolors , linewidth=linewidths )
+        plt.bar( x=light_ids , height=averages , width=width*0.50, color=colors  )
 
         plot_path = os.path.join( self.config['Locations']['templocation'] , '{0}-{1}.png'.format(self.reportFileName,page_num))
 
@@ -139,7 +149,7 @@ class QtReport:
         cur_df = self.df.iloc[start_row:end_row+1] #end_row exclusive
 
         #Draw a bar chart
-        self.__plot(cur_df, page_num,start_row,end_row)
+        self.__plot(cur_df, page_num, start_row, end_row)
 
         #Convert the dataframe into an HTML table, excluding the index column
         m_table = cur_df.to_html(index=False) 
