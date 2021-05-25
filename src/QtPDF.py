@@ -168,11 +168,11 @@ class QtReport:
 
         QtUtils.displayInfo('{0} was made...'.format(new_HTML_path))
 
-        self.__onePDF(html_page=each_page,report_file_name=self.reportFileName,page_num=page_num)
+        self.__onePDF( html_page=each_page , page_num=page_num )
 
-    def __onePDF(self,*,html_page,report_file_name,page_num):
+    def __onePDF(self,*,html_page,page_num):
       
-        new_PDF_path = os.path.join( self.config['Locations']['templocation'] , '{0}-{1}.pdf'.format(report_file_name,page_num) )
+        new_PDF_path = os.path.join( self.config['Locations']['templocation'] , '{0}-{1}.pdf'.format(self.reportFileName,page_num) )
 
         #Set base url to img folder
         HTML(string=html_page,base_url='img').write_pdf( new_PDF_path ) 
@@ -186,20 +186,19 @@ class QtReport:
 
         merge_list = []
 
-        for file in os.listdir(input_dir):
-            if file in self.pdfNames:
-                merge_list.append(input_dir+os.sep+file)
+        for f in os.listdir(input_dir):
+            if f in self.pdfNames:
+                merge_list.append(os.path.join(input_dir,f))
 
         sorted(merge_list)
 
         merger = PyPDF2.PdfFileMerger()
 
-        for pdf in merge_list:
-            merger.append(pdf)
+        for f in merge_list:
+            merger.append(f)
 
-        merger.write(output_dir+os.sep+'{0}.pdf'.format(self.reportFileName)) 
+        merger.write(os.path.join(output_dir,'{0}.pdf'.format(self.reportFileName))) 
         merger.close()
-
 
     def generate( self ):
 
@@ -210,7 +209,6 @@ class QtReport:
         #Get the total number of entries
         num_of_rows  = self.df.shape[0]
     
-
         #Get the number of rows per page
         self.num_rows_per_page = int(self.config['ReportFormat']['numberofrowsperpage'])
 
