@@ -2,6 +2,7 @@ import os
 import math
 import configparser
 import datetime
+from numpy import average
 
 import pandas as pd
 
@@ -64,16 +65,16 @@ class QtReport:
         
         light_ids = list(range(start_row+1,end_row+2))
 
-        averages = []
+        average_values = []
         ICAOs = []
 
         for _ , row in cur_df.iterrows():
-            averages.append(row['AVG(cd)'])
+            average_values.append(row['AVG(cd)'])
             ICAOs.append(row['%ICAO'])
 
         colors = []
 
-        for i, row in cur_df.iterrows():
+        for _ , row in cur_df.iterrows():
             if row['C'] == 'R':
                 colors.append('red')
             elif row['C'] == 'Y':
@@ -94,31 +95,28 @@ class QtReport:
         if diff > 0:
             for i in range(light_ids[-1]+1,light_ids[-1]+diff+1):
                 light_ids.append(i)
-                averages.append(0.0)
+                average_values.append(0.0)
                 ICAOs.append(0.0)
 
-        redbars = []
-        edgecolors = []
-        linewidths = []
+        red_values = []
+        edge_colors = []
+        line_widths = []
 
-        row = 0
-        for val in ICAOs:
+        for row , val in enumerate(ICAOs):
             if row < cur_df.shape[0]:
                 if val < 50.0:
-                    redbars.append(averages[row]+500)
-                    edgecolors.append('red')
-                    linewidths.append(1.0)
+                    red_values.append(average_values[row]+500)
+                    edge_colors.append('red')
+                    line_widths.append(1.0)
                 else:
-                    redbars.append(0.0)
-                    edgecolors.append('white')
-                    linewidths.append(0.0)
+                    red_values.append(0.0)
+                    edge_colors.append('white')
+                    line_widths.append(0.0)
             else:
-                redbars.append(0.0)  
-                edgecolors.append('white')
-                linewidths.append(0.0)
-
-            row = row+1
-
+                red_values.append(0.0)  
+                edge_colors.append('white')
+                line_widths.append(0.0)
+           
         #Set outer background color
         plt.figure(facecolor='#9d9d9e')
         #Set inner background color
@@ -134,13 +132,13 @@ class QtReport:
 
         width = float(self.config['BarChartFormat']['widthofonebar'])
         
-        plt.bar( x=light_ids , height=redbars , width=width, color='#9d9d9e' , edgecolor=edgecolors , linewidth=linewidths )
-        plt.bar( x=light_ids , height=averages , width=width*0.50, color=colors  )
+        plt.bar( x=light_ids , height=red_values  , width=width, color='#9d9d9e' , edgecolor=edge_colors , linewidth=line_widths )
+        plt.bar( x=light_ids , height=average_values , width=width*0.50, color=colors  )
 
-        plot_path = os.path.join( self.config['Locations']['templocation'] , '{0}-{1}.png'.format(self.reportFileName,page_num))
+        save_as = os.path.join( self.config['Locations']['templocation'] , '{0}-{1}.png'.format(self.reportFileName,page_num))
 
         #save the plot
-        plt.savefig( plot_path , dpi=400  )
+        plt.savefig( save_as , dpi=400  )
         plt.close()
 
     def __generateOnePDF( self , page_num , start_row , end_row ):
@@ -157,7 +155,7 @@ class QtReport:
         datetime_of_report = datetime.datetime.today()
 
         #Render each page 
-        each_page =  self.template.render(
+        html_page =  self.template.render(
                                     m_table=m_table,
                                     page_no=page_num, 
                                     report_file_name=self.reportFileName,  
@@ -172,23 +170,23 @@ class QtReport:
         self.pdfNames.append('{0}-{1}.pdf'.format(self.reportFileName,page_num))
 
         #Compute the name of the current HTML
-        new_HTML_path = os.path.join( self.config['Locations']['templocation'] , '{0}-{1}.html'.format(self.reportFileName,page_num) ) 
+        save_as = os.path.join( self.config['Locations']['templocation'] , '{0}-{1}.html'.format(self.reportFileName,page_num) ) 
         
-        with open( new_HTML_path , "w" , encoding="utf-8") as html_file: 
-            html_file.write(each_page)
+        with open( save_as , 'w' , encoding='utf-8') as html_file: 
+            html_file.write(html_page)
 
-        QtUtils.displayInfo('{0} was made...'.format(new_HTML_path))
+        QtUtils.displayInfo('{0} was made...'.format(save_as))
 
-        self.__onePDF( html_page=each_page , page_num=page_num )
+        self.__onePDF( html_page=html_page , page_num=page_num )
 
     def __onePDF(self,*,html_page,page_num):
       
-        new_PDF_path = os.path.join( self.config['Locations']['templocation'] , '{0}-{1}.pdf'.format(self.reportFileName,page_num) )
+        save_as = os.path.join( self.config['Locations']['templocation'] , '{0}-{1}.pdf'.format(self.reportFileName,page_num) )
 
         #Set base url to img folder
-        HTML(string=html_page,base_url='img').write_pdf( new_PDF_path ) 
+        HTML(string=html_page,base_url='img').write_pdf(save_as) 
 
-        QtUtils.displayInfo('{0} was made...'.format(new_PDF_path))
+        QtUtils.displayInfo('{0} was made...'.format(save_as))
 
     def __mergePDFs(self):
 
@@ -208,7 +206,8 @@ class QtReport:
         for f in merge_list:
             merger.append(f)
 
-        merger.write(os.path.join(output_dir,'{0}.pdf'.format(self.reportFileName))) 
+        save_as = os.path.join(output_dir,'{0}.pdf'.format(self.reportFileName))
+        merger.write(save_as) 
         merger.close()
 
     def generate( self ):
@@ -245,7 +244,7 @@ class QtReport:
         #Delete temp files
         dir = self.config['Locations']['templocation']
         for f in os.listdir(dir):
-           os.remove(os.path.join(dir, f))
+           os.remove(os.path.join(dir,f))
 
       
     
