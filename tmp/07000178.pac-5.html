@@ -100,32 +100,32 @@
   </head>
   <body>
     <div>
-      <h1 id="airport-name"><center>{{air_port_name}}</center></h1>
+      <h1 id="airport-name"><center>Betong International Airport</center></h1>
     </div>
     <div>
       <p>
         <center>
           <span class="span"
-            ><b>Report File Name:</b> {{report_file_name}}</span
+            ><b>Report File Name:</b> 07000178.pac</span
           >
           <span class="span"
             >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
           >
-          <span class="span"><b>Date of Report:</b> {{date_of_report}} </span>
+          <span class="span"><b>Date of Report:</b> 25/05/2021 </span>
           <span class="span"
             >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
           >
-          <span class="span"><b>Time of Report:</b> {{time_of_report}}</span>
+          <span class="span"><b>Time of Report:</b> 15:14:02</span>
         </center>
       </p>
 
       <p>
         <center>
-          <span class="span"><b>Way Name:</b> {{way_name}} </span>
+          <span class="span"><b>Way Name:</b> RUNWAY EDGE - 07L </span>
           <span class="span"
             >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
           >
-          <span class="span"><b>Agent:</b> {{agent_name}} </span>
+          <span class="span"><b>Agent:</b> FBT_Sp </span>
           <span class="span"
             >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
           >
@@ -137,7 +137,120 @@
     <hr id="top-hr-line" />
 
     <div class="container">
-      <center>{{ m_table }}</center>
+      <center><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Light ID</th>
+      <th>AVG(cd)</th>
+      <th>Max(cd)</th>
+      <th>%ICAO</th>
+      <th>Distance</th>
+      <th>C</th>
+      <th>S</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>61</td>
+      <td>16290.80375</td>
+      <td>21425.79</td>
+      <td>192.38</td>
+      <td>1.76</td>
+      <td>Y</td>
+      <td>✓</td>
+    </tr>
+    <tr>
+      <td>62</td>
+      <td>16271.82250</td>
+      <td>20748.29</td>
+      <td>148.77</td>
+      <td>1.36</td>
+      <td>Y</td>
+      <td>✓</td>
+    </tr>
+    <tr>
+      <td>63</td>
+      <td>15594.32000</td>
+      <td>21228.52</td>
+      <td>133.40</td>
+      <td>0.95</td>
+      <td>G</td>
+      <td>✓</td>
+    </tr>
+    <tr>
+      <td>64</td>
+      <td>14978.91625</td>
+      <td>19553.42</td>
+      <td>86.95</td>
+      <td>0.64</td>
+      <td>Y</td>
+      <td>✗</td>
+    </tr>
+    <tr>
+      <td>65</td>
+      <td>15403.90625</td>
+      <td>20587.25</td>
+      <td>46.51</td>
+      <td>0.82</td>
+      <td>G</td>
+      <td>✓</td>
+    </tr>
+    <tr>
+      <td>66</td>
+      <td>15879.70375</td>
+      <td>20294.02</td>
+      <td>77.18</td>
+      <td>0.92</td>
+      <td>W</td>
+      <td>✓</td>
+    </tr>
+    <tr>
+      <td>67</td>
+      <td>14973.75625</td>
+      <td>21634.30</td>
+      <td>64.48</td>
+      <td>1.05</td>
+      <td>W</td>
+      <td>✓</td>
+    </tr>
+    <tr>
+      <td>68</td>
+      <td>12461.97000</td>
+      <td>15606.77</td>
+      <td>46.74</td>
+      <td>1.60</td>
+      <td>G</td>
+      <td>✓</td>
+    </tr>
+    <tr>
+      <td>69</td>
+      <td>15353.92625</td>
+      <td>20981.19</td>
+      <td>100.62</td>
+      <td>1.16</td>
+      <td>W</td>
+      <td>✓</td>
+    </tr>
+    <tr>
+      <td>70</td>
+      <td>17502.07750</td>
+      <td>21942.88</td>
+      <td>114.01</td>
+      <td>0.58</td>
+      <td>R</td>
+      <td>✗</td>
+    </tr>
+    <tr>
+      <td>71</td>
+      <td>16544.07125</td>
+      <td>20796.31</td>
+      <td>197.90</td>
+      <td>1.65</td>
+      <td>Y</td>
+      <td>✓</td>
+    </tr>
+  </tbody>
+</table></center>
     </div>
 
     <hr id="middle-hr-line" />
@@ -147,16 +260,16 @@
     </div>
 
     <div>
-      <center><img id="chart" src="../tmp/{{plot_path}}" /></center>
+      <center><img id="chart" src="../tmp/07000178.pac-5.png" /></center>
     </div>
 
     <hr id="bottom-hr-line" />
 
     <div>
       <p style="text-align: left; float: left">
-        <b>Date of Report:</b> {{date_of_report}}
+        <b>Date of Report:</b> 25/05/2021
       </p>
-      <p style="text-align: right; float: right"><b>Page:</b> {{page_no}}</p>
+      <p style="text-align: right; float: right"><b>Page:</b> 5</p>
     </div>
   </body>
 </html>

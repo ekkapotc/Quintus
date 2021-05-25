@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <meta charset="UTF-8" />
+    <title></title>
+    <style>
+      * {
+        font-size: 10pt;
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      p {
+        padding: 5px;
+      }
+
+      #chart {
+        width: 80%;
+        height: auto;
+      }
+
+      #caption {
+        width: 50%;
+        height: auto;
+        margin-bottom: 25px;
+      }
+
+      .container {
+        display: flex;
+        justify-content: center;
+      }
+
+      #airport-name {
+        margin-top: 5px;
+        margin-bottom: 10px;
+      }
+
+      #top-hr-line {
+        border-top: 1px solid black;
+        border-bottom: none;
+        margin-bottom: 10px;
+      }
+
+      #middle-hr-line {
+        border-top: 1px solid black;
+        border-bottom: none;
+        margin-top: 10px;
+        margin-bottom: 25px;
+      }
+
+      #bottom-hr-line {
+        border-top: 1px solid black;
+        border-bottom: none;
+        margin-top: 10px;
+      }
+
+      .dataframe {
+        font-size: 7pt;
+        border-collapse: collapse;
+        border: 1px solid black;
+      }
+
+      .dataframe thead {
+        padding: 2px;
+        font-size: 10pt;
+        color: black;
+      }
+
+      .dataframe th {
+        border-bottom-color: black;
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+      }
+
+      .dataframe td,
+      th {
+        padding: 2px;
+        text-align: center;
+        border-left-color: black;
+        border-left-style: solid;
+        border-left-width: 1px;
+      }
+
+      .dataframe tr:nth-child(even) {
+        background: #e0e0e0;
+      }
+
+      .dataframe tr:hover {
+        background: rgb(112, 105, 105);
+        cursor: pointer;
+      }
+
+      @page {
+        size: A4;
+        margin: 1cm;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1 id="airport-name"><center>Betong International Airport</center></h1>
+    </div>
+    <div>
+      <p>
+        <center>
+          <span class="span"
+            ><b>Report File Name:</b> 07000178.pac</span
+          >
+          <span class="span"
+            >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
+          >
+          <span class="span"><b>Date of Report:</b> 25/05/2021 </span>
+          <span class="span"
+            >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
+          >
+          <span class="span"><b>Time of Report:</b> 15:14:00</span>
+        </center>
+      </p>
+
+      <p>
+        <center>
+          <span class="span"><b>Way Name:</b> RUNWAY EDGE - 07L </span>
+          <span class="span"
+            >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
+          >
+          <span class="span"><b>Agent:</b> FBT_Sp </span>
+          <span class="span"
+            >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
+          >
+          <span class="span"><em>(Not Cross Checked)</em></span>
+        </center>
+      </p>
+    </div>
+
+    <hr id="top-hr-line" />
+
+    <div class="container">
+      <center><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Light ID</th>
+      <th>AVG(cd)</th>
+      <th>Max(cd)</th>
+      <th>%ICAO</th>
+      <th>Distance</th>
+      <th>C</th>
+      <th>S</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>31</td>
+      <td>16264.74250</td>
+      <td>21876.93</td>
+      <td>143.34</td>
+      <td>1.17</td>
+      <td>R</td>
+      <td>✗</td>
+    </tr>
+    <tr>
+      <td>32</td>
+      <td>16588.50125</td>
+      <td>20934.60</td>
+      <td>83.48</td>
+      <td>0.79</td>
+      <td>G</td>
+      <td>✓</td>
+    </tr>
+    <tr>
+      <td>33</td>
+      <td>15506.99625</td>
+      <td>21862.07</td>
+      <td>90.64</td>
+      <td>1.48</td>
+      <td>R</td>
+      <td>✗</td>
+    </tr>
+    <tr>
+      <td>34</td>
+      <td>16222.98250</td>
+      <td>21604.38</td>
+      <td>187.89</td>
+      <td>1.72</td>
+      <td>W</td>
+      <td>✗</td>
+    </tr>
+    <tr>
+      <td>35</td>
+      <td>13594.54375</td>
+      <td>20491.86</td>
+      <td>55.50</td>
+      <td>1.28</td>
+      <td>Y</td>
+      <td>✗</td>
+    </tr>
+    <tr>
+      <td>36</td>
+      <td>16219.70000</td>
+      <td>21797.66</td>
+      <td>151.53</td>
+      <td>0.82</td>
+      <td>Y</td>
+      <td>✓</td>
+    </tr>
+    <tr>
+      <td>37</td>
+      <td>15355.92000</td>
+      <td>20712.84</td>
+      <td>178.01</td>
+      <td>0.73</td>
+      <td>G</td>
+      <td>✓</td>
+    </tr>
+    <tr>
+      <td>38</td>
+      <td>14837.71250</td>
+      <td>19409.13</td>
+      <td>119.18</td>
+      <td>1.11</td>
+      <td>W</td>
+      <td>✓</td>
+    </tr>
+    <tr>
+      <td>39</td>
+      <td>14991.54125</td>
+      <td>21768.19</td>
+      <td>144.52</td>
+      <td>1.10</td>
+      <td>G</td>
+      <td>✓</td>
+    </tr>
+    <tr>
+      <td>40</td>
+      <td>14008.23125</td>
+      <td>20245.80</td>
+      <td>50.29</td>
+      <td>1.39</td>
+      <td>W</td>
+      <td>✗</td>
+    </tr>
+    <tr>
+      <td>41</td>
+      <td>13624.49750</td>
+      <td>18849.21</td>
+      <td>185.65</td>
+      <td>1.22</td>
+      <td>W</td>
+      <td>✓</td>
+    </tr>
+    <tr>
+      <td>42</td>
+      <td>14333.83500</td>
+      <td>19936.13</td>
+      <td>147.04</td>
+      <td>0.74</td>
+      <td>G</td>
+      <td>✗</td>
+    </tr>
+    <tr>
+      <td>43</td>
+      <td>13323.15750</td>
+      <td>19501.93</td>
+      <td>170.78</td>
+      <td>1.30</td>
+      <td>R</td>
+      <td>✓</td>
+    </tr>
+    <tr>
+      <td>44</td>
+      <td>15685.58250</td>
+      <td>21134.28</td>
+      <td>101.77</td>
+      <td>1.37</td>
+      <td>Y</td>
+      <td>✓</td>
+    </tr>
+    <tr>
+      <td>45</td>
+      <td>17576.96625</td>
+      <td>21493.95</td>
+      <td>187.98</td>
+      <td>1.69</td>
+      <td>R</td>
+      <td>✓</td>
+    </tr>
+  </tbody>
+</table></center>
+    </div>
+
+    <hr id="middle-hr-line" />
+
+    <div style="text-align: center">
+      <img id="caption" src="../img/caption.png" />
+    </div>
+
+    <div>
+      <center><img id="chart" src="../tmp/07000178.pac-3.png" /></center>
+    </div>
+
+    <hr id="bottom-hr-line" />
+
+    <div>
+      <p style="text-align: left; float: left">
+        <b>Date of Report:</b> 25/05/2021
+      </p>
+      <p style="text-align: right; float: right"><b>Page:</b> 3</p>
+    </div>
+  </body>
+</html>

@@ -1,13 +1,18 @@
 import os
 import math
 import configparser
-import PyPDF2
 import datetime
+
 import pandas as pd
+
+from jinja2 import Environment, FileSystemLoader
+
+from matplotlib import pyplot as plt
+
+import PyPDF2
 from weasyprint import HTML,CSS
 from weasyprint.fonts import FontConfiguration
-from jinja2 import Environment, FileSystemLoader
-from matplotlib import pyplot as plt
+
 import QtUtils
 import QtConfigure
 
@@ -39,10 +44,9 @@ class QtReport:
         #Initialize values for new three columns
         data = [0 for i in range(self.df.shape[0])]
 
-        #Insert three new columns 'AVG(cd)', 'Max(cd)' and '%ICAO'
+        #Insert three new columns 'AVG(cd)', 'Max(cd)'
         self.df.insert(1, 'AVG(cd)', data)
         self.df.insert(2, 'Max(cd)', data)
-        #self.df.insert(3, '%ICAO',data)
 
         #Drop columns 'Timestamp' , 'Airport' and 'Way Name'
         self.df.drop(['Timestamp','Airport','Way Name'], inplace=True, axis=1) 
@@ -51,15 +55,12 @@ class QtReport:
         self.df['AVG(cd)'] = self.df[['v1', 'v2','v3','v4','v5','v6','v7','v8']].mean(axis=1)
         self.df['Max(cd)'] = self.df[['v1', 'v2','v3','v4','v5','v6','v7','v8']].max(axis=1)
 
-        #Calculare %ICAO : TO-DO
-
         #Drop columns 'v1','v2',...,'v8'
         self.df.drop(['v1', 'v2','v3','v4','v5','v6','v7','v8'], inplace=True, axis=1) 
 
     def __draw(self , cur_df , page_num , start_row , end_row ):
         
         light_ids = list(range(start_row+1,end_row+2))
-        #indices = list(range(0,self.num_rows_per_page))
         
         avgs = []
         icaos = []
@@ -112,9 +113,10 @@ class QtReport:
 
         #Set outer background color
         plt.figure(facecolor='#9d9d9e')
-        
         #Set inner background color
         plt.axes().set_facecolor('#9d9d9e')
+
+        #Draw a horizontal grid
         plt.gca().yaxis.grid()
         plt.gca().set_axisbelow(True)
 
@@ -231,9 +233,9 @@ class QtReport:
         self.__mergePDFs()
 
         #Delete temp files
-        dir = self.config['Locations']['templocation']
-        for f in os.listdir(dir):
-            os.remove(os.path.join(dir, f))
+        #dir = self.config['Locations']['templocation']
+        #for f in os.listdir(dir):
+        #    os.remove(os.path.join(dir, f))
 
       
     
