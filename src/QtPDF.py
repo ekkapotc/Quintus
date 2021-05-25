@@ -233,7 +233,7 @@ class QtReport:
             if end_row > num_of_rows-1:
                 end_row = num_of_rows-1
 
-            #Export the current page as HTML
+            #Export the current page 
             self.__generateOnePDF( page_num , start_row , end_row )
 
             row = end_row+1
