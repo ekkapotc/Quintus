@@ -58,7 +58,7 @@ class QtReport:
         #Drop columns 'v1','v2',...,'v8'
         self.df.drop(['v1', 'v2','v3','v4','v5','v6','v7','v8'], inplace=True, axis=1) 
 
-    def __draw(self , cur_df , page_num , start_row , end_row ):
+    def __plot(self , cur_df , page_num , start_row , end_row ):
         
         light_ids = list(range(start_row+1,end_row+2))
 
@@ -139,8 +139,9 @@ class QtReport:
         cur_df = self.df.iloc[start_row:end_row+1] #end_row exclusive
 
         #Draw a bar chart
-        self.__draw(cur_df, page_num,start_row,end_row)
+        self.__plot(cur_df, page_num,start_row,end_row)
 
+        #Convert the dataframe into an HTML table, excluding the index column
         m_table = cur_df.to_html(index=False) 
 
         datetime_of_report = datetime.datetime.today()
