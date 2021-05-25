@@ -12,10 +12,6 @@
         box-sizing: border-box;
       }
 
-      body {
-        position: relative;
-      }
-
       p {
         padding: 5px;
       }
@@ -128,7 +124,7 @@
       />
     </div>
 
-    <div>
+    <div style="position: fixed; bottom: 500px; width: 100%">
       <center>
         <img
           style="width: 50%; height: auto; margin-bottom: 10px"
@@ -137,13 +133,13 @@
       </center>
     </div>
 
-    <div>
+    <div style="position: fixed; bottom: 40px; width: 100%">
       <center>
         <img style="width: 80%; height: auto" src="../tmp/{{plot_path}}" />
       </center>
     </div>
 
-    <div>
+    <div style="position: fixed; bottom: 20px; width: 100%">
       <hr
         style="
           border-top: 1px solid black;
@@ -154,11 +150,42 @@
       />
     </div>
 
-    <div style="margin-top: 10px">
-      <p style="text-align: left; float: left">
-        <b>Date of Report:</b> {{date_of_report}}
-      </p>
-      <p style="text-align: right; float: right"><b>Page:</b> {{page_no}}</p>
+    <div style="position: fixed; bottom: 0px">
+      <span><b>Date of Report:</b> {{date_of_report}}</span>
+      <span class="span"
+        >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
+      >
+      <span class="span"
+        >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
+      >
+      <span class="span"
+        >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
+      >
+      <span class="span"
+        >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
+      >
+      <span class="span"
+        >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
+      >
+      <span class="span"
+        >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
+      >
+      <span class="span"
+        >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
+      >
+      <span class="span"
+        >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
+      >
+      <span class="span"
+        >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
+      >
+      <span class="span"
+        >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
+      >
+      <span class="span"
+        >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
+      >
+      <span><b>Page:</b> {{page_no}}</span>
     </div>
   </body>
 </html>

@@ -243,8 +243,8 @@ class QtReport:
 
         #Delete temp files
         dir = self.config['Locations']['templocation']
-        #for f in os.listdir(dir):
-           #os.remove(os.path.join(dir,f))
+        for f in os.listdir(dir):
+           os.remove(os.path.join(dir,f))
 
       
     
