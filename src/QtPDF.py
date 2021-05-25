@@ -107,7 +107,7 @@ class QtReport:
                     red_bars.append(0.0)
             else:
                 red_bars.append(0.0)
-
+                
             idx = idx+1
 
         #Set outer background color
@@ -115,6 +115,8 @@ class QtReport:
         
         #Set inner background color
         plt.axes().set_facecolor('#9d9d9e')
+        plt.gca().yaxis.grid()
+        plt.gca().set_axisbelow(True)
 
         plt.xticks(xticks)
         plt.xlabel('Light ID')
