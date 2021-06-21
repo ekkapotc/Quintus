@@ -99,50 +99,14 @@
     </style>
   </head>
   <body>
-  <div id="top-logos">
+    <div id="top-logos">
       <img style="width: 5%; height: auto" src="../img/left-logo.png" />
-      <span class="span"
-        >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
-      >
-      <span class="span"
-        >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
-      >
-      <span class="span"
-        >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
-      >
-      <span class="span"
-        >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
-      >
-      <span class="span"
-        >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
-      >
-      <span class="span"
-        >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
-      >
-      <span class="span"
-        >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
-      >
-      <span class="span"
-        >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
-      >
-      <span class="span"
-        >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
-      >
-      <span class="span"
-        >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
-      >
-      <span class="span"
-        >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
-      >
-      <span class="span"
-        >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
-      >
-      <span class="span"
-        >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
-      >
-      <span class="span"
-        >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
-      >
+
+      {% for n in range(14) %}
+      <span class="span">
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      </span>
+      {% endfor %}
 
       <img style="width: 7%; height: auto" src="../img/right-logo.png" />
     </div>
@@ -155,13 +119,18 @@
           <span class="span"
             ><b>Report File Name:</b> {{report_file_name}}</span
           >
-          <span class="span"
-            >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
-          >
+          {% for n in range(1) %}
+          <span class="span">
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+          </span>
+          {% endfor %}
+
           <span class="span"><b>Date of Report:</b> {{date_of_report}} </span>
-          <span class="span"
-            >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
-          >
+          {% for n in range(1) %}
+          <span class="span">
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+          </span>
+          {% endfor %}
           <span class="span"><b>Time of Report:</b> {{time_of_report}}</span>
         </center>
       </p>
@@ -169,13 +138,17 @@
       <p>
         <center>
           <span class="span"><b>Way Name:</b> {{way_name}} </span>
-          <span class="span"
-            >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
-          >
+          {% for n in range(1) %}
+          <span class="span">
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+          </span>
+          {% endfor %}
           <span class="span"><b>Agent:</b> {{agent_name}} </span>
-          <span class="span"
-            >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
-          >
+          {% for n in range(1) %}
+          <span class="span">
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+          </span>
+          {% endfor %}
           <span class="span"><em>(Not Cross Checked)</em></span>
         </center>
       </p>
@@ -198,56 +171,17 @@
     </div>
 
     <div id="bottom-logos">
-        <img style="width: 5%; height: auto" src="../img/left-logo2.png" />
-
-        <span class="span"
-          >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
-        >
-        <span class="span"
-          >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
-        >
-        <span class="span"
-          >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
-        >
-        <span class="span"
-          >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
-        >
-        <span class="span"
-          >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
-        >
-        <span class="span"
-          >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
-        >
-        <span class="span"
-          >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
-        >
-        <span class="span"
-          >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
-        >
-        <span class="span"
-          >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
-        >
-        <span class="span"
-          >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
-        >
-        <span class="span"
-          >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
-        >
-        <span class="span"
-          >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
-        >
-        <span class="span"
-          >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
-        >
-        <span class="half-span"
-          >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
-        >
-
-        <img style="width: 7%; height: auto" src="../img/right-logo2.png" />
-      </div>
+      <img style="width: 5%; height: auto" src="../img/left-logo2.png" />
+      {% for n in range(14) %}
+      <span class="span">
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      </span>
+      {% endfor %}
+      <img style="width: 7%; height: auto" src="../img/right-logo2.png" />
+    </div>
 
     <hr id="bottom-hr-line" />
-    
+
     <div>
       <p style="text-align: left; float: left">
         <b>Date of Report:</b> {{date_of_report}}
