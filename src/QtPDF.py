@@ -118,9 +118,9 @@ class QtReport:
                 line_widths.append(0.0)
            
         #Set outer background color
-        plt.figure(facecolor='#9d9d9e')
+        plt.figure(facecolor='#9d9d9d')
         #Set inner background color
-        plt.axes().set_facecolor('#9d9d9e')
+        plt.axes().set_facecolor('#9d9d9d')
 
         #Draw a horizontal grid
         plt.gca().yaxis.grid()
@@ -132,7 +132,7 @@ class QtReport:
 
         width = float(self.config['BarChartFormat']['widthofonebar'])
         
-        plt.bar( x=light_ids , height=red_values  , width=width, color='#9d9d9e' , edgecolor=edge_colors , linewidth=line_widths )
+        plt.bar( x=light_ids , height=red_values  , width=width, color='#9d9d9d' , edgecolor=edge_colors , linewidth=line_widths )
         plt.bar( x=light_ids , height=average_values , width=width*0.50, color=colors  )
 
         save_as = os.path.join( self.config['Locations']['templocation'] , '{0}-{1}.png'.format(self.reportFileName,page_no))
@@ -179,12 +179,12 @@ class QtReport:
 
         self.__onePDF( html_page=html_page , page_no=page_no )
 
-    def __onePDF(self,*,html_page,page_no):
+    def __onePDF( self , * , html_page , page_no ):
       
         save_as = os.path.join( self.config['Locations']['templocation'] , '{0}-{1}.pdf'.format(self.reportFileName,page_no) )
 
         #Set base url to img folder
-        HTML(string=html_page,base_url='img').write_pdf(save_as) 
+        HTML( string=html_page , base_url='img' ).write_pdf(save_as) 
 
         QtUtils.displayInfo('{0} was made...'.format(save_as))
 
