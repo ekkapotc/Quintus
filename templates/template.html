@@ -16,44 +16,12 @@
         padding: 5px;
       }
 
-      #chart {
-        width: 70%;
-        height: auto;
+      table {
+        margin: 0 auto;
       }
 
-      #caption {
-        width: 50%;
-        height: auto;
-        margin-bottom: 25px;
-      }
-
-      .container {
-        display: flex;
-        justify-content: center;
-      }
-
-      #airport-name {
-        margin-top: 5px;
-        margin-bottom: 10px;
-      }
-
-      #top-hr-line {
-        border-top: 1px solid black;
-        border-bottom: none;
-        margin-bottom: 10px;
-      }
-
-      #middle-hr-line {
-        border-top: 1px solid black;
-        border-bottom: none;
-        margin-top: 10px;
-        margin-bottom: 25px;
-      }
-
-      #bottom-hr-line {
-        border-top: 1px solid black;
-        border-bottom: none;
-        margin-top: 10px;
+      td {
+        width: 80px;
       }
 
       .dataframe {
@@ -101,17 +69,17 @@
   <body>
     <div id="top-logos">
       <img style="width: 5%; height: auto" src="../img/left-logo.png" />
-
       {% for n in range(14) %}
       <span class="span">
-        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
       </span>
       {% endfor %}
-
       <img style="width: 7%; height: auto" src="../img/right-logo.png" />
     </div>
     <div>
-      <h1 id="airport-name"><center>{{air_port_name}}</center></h1>
+      <h1 style="margin-top: 5px; margin-bottom: 10px">
+        <center>{{air_port_name}}</center>
+      </h1>
     </div>
     <div>
       <p>
@@ -124,7 +92,6 @@
             &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
           </span>
           {% endfor %}
-
           <span class="span"><b>Date of Report:</b> {{date_of_report}} </span>
           {% for n in range(1) %}
           <span class="span">
@@ -154,39 +121,80 @@
       </p>
     </div>
 
-    <hr id="top-hr-line" />
-
-    <div class="container">
-      <center>{{ m_table }}</center>
-    </div>
-
-    <hr id="middle-hr-line" />
-
-    <div style="text-align: center">
-      <img id="caption" src="../img/caption.png" />
-    </div>
-
     <div>
-      <center><img id="chart" src="../tmp/{{plot_path}}" /></center>
+      <hr
+        style="
+          border-top: 1px solid black;
+          border-bottom: none;
+          margin-bottom: 10px;
+          height: 1px;
+        "
+      />
     </div>
 
-    <div id="bottom-logos">
-      <img style="width: 5%; height: auto" src="../img/left-logo2.png" />
-      {% for n in range(14) %}
+    <div>{{ m_table }}</div>
+
+    <div style="position: fixed; bottom: 550px; width: 100%">
+      <hr
+        style="
+          border-top: 1px solid black;
+          border-bottom: none;
+          margin-top: 10px;
+          margin-bottom: 10px;
+        "
+      />
+    </div>
+
+    <div style="position: fixed; bottom: 460px; width: 100%">
+      <center>
+        <img
+          style="width: 80%; height: auto; margin-bottom: 11px"
+          src="../img/caption.png"
+        />
+      </center>
+    </div>
+
+    <div style="position: fixed; bottom: 40px; width: 100%">
+      <center>
+        <img style="width: 80%; height: auto" src="../tmp/{{plot_path}}" />
+      </center>
+    </div>
+
+    <div style="position: fixed; bottom: 20px; width: 100%">
+      <hr
+        style="
+          border-top: 1px solid black;
+          border-bottom: none;
+          margin-top: 10px;
+          margin-bottom: 0px;
+        "
+      />
+    </div>
+
+    <div style="position: fixed; bottom: 5px">
+      <div id="bottom-logos" style="position: relative; bottom: 5px">
+        <img style="width: 5%; height: auto" src="../img/left-logo2.png" />
+
+        {% for n in range(14) %}
+        <span class="span">
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        </span>
+        {% endfor %}
+
+        <img style="width: 7%; height: auto" src="../img/right-logo2.png" />
+      </div>
+      <span>
+        <b>Date of Report:</b>
+        {{date_of_report}}
+      </span>
+
+      {% for n in range(11) %}
       <span class="span">
         &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
       </span>
       {% endfor %}
-      <img style="width: 7%; height: auto" src="../img/right-logo2.png" />
-    </div>
 
-    <hr id="bottom-hr-line" />
-
-    <div>
-      <p style="text-align: left; float: left">
-        <b>Date of Report:</b> {{date_of_report}}
-      </p>
-      <p style="text-align: right; float: right"><b>Page:</b> {{page_no}}</p>
+      <span> <b>Page:</b> {{page_no}} </span>
     </div>
   </body>
 </html>
