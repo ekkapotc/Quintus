@@ -247,4 +247,3 @@ class QtReport:
            os.remove(os.path.join(dir,f))
 
       
-    
