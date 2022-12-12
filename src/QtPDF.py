@@ -199,7 +199,8 @@ class QtReport:
             if f in self.pdfNames:
                 merge_list.append(os.path.join(input_dir,f))
 
-        sorted(merge_list)
+        merge_list.sort(key=lambda f: int(''.join(filter(str.isdigit, f))))
+        #sorted(merge_list)
 
         merger = PyPDF2.PdfFileMerger()
 
