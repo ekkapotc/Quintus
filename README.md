@@ -1,7 +1,16 @@
-Report Generation with Python:
+# Report Generation with Python
 
-This python script generates a runway photometric report.
+This Python script generates a **runway photometric report** from measurement data.
 
-Input: pandas dataframe that describes photometric measurements
+## Input
 
-Library-Dependencies: pandas, weasyprint, mergepdf, matplotlib, jinja2
+- A **pandas DataFrame** containing photometric measurements.
+
+## Library Dependencies
+
+- `pandas`  
+- `weasyprint`  
+- `mergepdf`  
+- `matplotlib`  
+- `jinja2`
+
